@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/navbar";
-import Cart from "./pages/Cart/Cart.jsx";
-import Shop from "./pages/Shop/Shop.jsx";
+// import Cart from "./pages/Cart/Cart.jsx";
+// import Shop from "./pages/Shop/Shop.jsx";
+import Cart from './Pages/Cart/Cart'
+import Shop from './Pages/Shop/Shop'
 import './App.css';
 import {ShopContextProvider} from "./Context/shop-context.jsx";
 
