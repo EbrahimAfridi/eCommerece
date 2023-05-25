@@ -5,6 +5,16 @@ export const CartItem = (props) => {
     const {id, productName, price, productImage } = props.data;
     const {cartItems, addToCart, removeFromCart, updateCartItemAmount} = useContext(ShopContext);
 
+    // const handleInputBlur = () => {
+    //     checkInputValue();
+    // };
+    // const checkInputValue = () => {
+    //     if (updateCartItemAmount === '0') {
+    //         // Stop rendering the component or perform any desired action
+    //         console.log('Component stopped rendering');
+    //     }
+    // };
+
     return(
         <div className="cartItem">
             {" "}
@@ -13,11 +23,12 @@ export const CartItem = (props) => {
                 <p><b>{productName}</b></p>
                 <p>${price}</p>
                 <div className="countHandler">
-                    <button onClick={() => removeFromCart(id)}>-</button>
+                    <button onClick={() => removeFromCart(id)}> - </button>
                     <input value={cartItems[id]}
                            onChange={(e) => {updateCartItemAmount(Number(e.target.value), id)}}
+                           // onBlur={handleInputBlur}
                     />
-                    <button onClick={() => addToCart(id)}>+</button>
+                    <button onClick={() => addToCart(id)}> + </button>
                 </div>
             </div>
 

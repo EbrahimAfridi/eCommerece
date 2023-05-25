@@ -1,52 +1,51 @@
-import item1 from "./assets/1.jpg"
-import item2 from "./assets/2.jpg"
-import item3 from "./assets/3.jpg"
-import item4 from "./assets/4.jpg"
-import item5 from "./assets/5.jpg"
-import item6 from "./assets/6.jpg"
-import item7 from "./assets/7.jpg"
+import nikeLows from './assets/nike shoes.webp'
+import lowsNike from './assets/lows nikes.webp'
+import GrnJrdn from './assets/green jrdn.webp'
+import duncks from './assets/duncks.webp'
+import Jrdn from './assets/jordan.webp'
+import YlwJrd from './assets/yellow jordan.webp'
 
 export const PRODUCTS = [
     {
         id: 1,
-        productName: "IPhone",
+        productName: "Dunk Low Premium 'Setsubun'",
         price: 1000.00,
-        productImage: item7
+        productImage: nikeLows
     },
     {
         id: 2,
-        productName: "Laptop",
+        productName: "Air Jordan 5 Retro SP 'Michigan'",
         price: 3000.00,
-        productImage: item4
+        productImage: YlwJrd
     },
     {
         id: 3,
-        productName: "Samsung",
+        productName: "Air Jordan 5 Retro SE 'UNC'",
         price: 800.00,
-        productImage: item7
+        productImage: Jrdn
     },
     {
         id: 4,
-        productName: "Camera",
+        productName: "Travis Scott x Dunk Low Premium QS SB 'Cactus Jack'",
         price: 1200.00,
-        productImage: item4
+        productImage: duncks
     },
     {
         id: 5,
-        productName: "IPad",
+        productName: "Air Jordan 1 Retro High OG 'Lucky Green'",
         price: 1500.00,
-        productImage: item7
+        productImage: GrnJrdn
     },
     {
         id: 6,
-        productName: "Keyboard",
+        productName: "Travis Scott x Air Jordan 1 Low 'Mocha' Sample",
         price: 400.00,
-        productImage: item4
+        productImage: lowsNike
     },
     {
         id: 7,
-        productName: "Mouse",
+        productName: "Dunk Low Premium 'Setsubun'",
         price: 150.00,
-        productImage: item7
+        productImage: nikeLows
     }
 ]
