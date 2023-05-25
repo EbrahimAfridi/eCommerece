@@ -5,16 +5,6 @@ export const CartItem = (props) => {
     const {id, productName, price, productImage } = props.data;
     const {cartItems, addToCart, removeFromCart, updateCartItemAmount} = useContext(ShopContext);
 
-    // const handleInputBlur = () => {
-    //     checkInputValue();
-    // };
-    // const checkInputValue = () => {
-    //     if (updateCartItemAmount === '0') {
-    //         // Stop rendering the component or perform any desired action
-    //         console.log('Component stopped rendering');
-    //     }
-    // };
-
     return(
         <div className="cartItem">
             {" "}
