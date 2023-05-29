@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import {useContext} from "react";
 import {ShopContext} from "../../Context/shop-context.jsx";
 
 export const Product = (props) => {
@@ -14,8 +14,9 @@ export const Product = (props) => {
                 <p>${price}</p>
             </div>
             <button className="addToCartBttn"
-                    onClick={() => addToCart(id)}>
-                Add to Cart {cartItemAmount > 0 && <> [{cartItemAmount}] </>}         {/* This is an if condition */}
+                    onClick={() => addToCart(id)}
+            >
+                Add to Cart {cartItemAmount > 0 && <> [{cartItemAmount}] </>}         {/* count of items added */}
             </button>
         </div>
     )

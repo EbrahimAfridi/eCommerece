@@ -3,19 +3,21 @@ import Navbar from "./components/navbar";
 import Cart from './Pages/Cart/Cart'
 import Shop from './Pages/Shop/Shop'
 import './App.css';
+import {ProductPage} from "./Pages/ProductPage/ProductPage.jsx";
 import {ShopContextProvider} from "./Context/shop-context.jsx";
 
 function App() {
     return (
       <div className='App'>
           <ShopContextProvider>
-              <BrowserRouter>
-                  <Navbar/>
-                  <Routes>
-                      <Route path='/' element={<Shop/>}/>
-                      <Route path='/cart' element={<Cart/>}/>
-                  </Routes>
-              </BrowserRouter>
+          <BrowserRouter>
+              <Navbar/>
+              <Routes>
+                  <Route path='/' element={<Shop/>}/>
+                  <Route path='/cart' element={<Cart/>}/>
+                  <Route path='/productPage/:id' element={<ProductPage />} />
+              </Routes>
+          </BrowserRouter>
           </ShopContextProvider>
       </div>
     );
