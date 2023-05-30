@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+.cart h1{
+    font-size: 32px;
+    margin-top: 10px;
+
+}
 .cartItem {
     display: flex;
     align-items: center;
@@ -30,10 +35,19 @@ p{
     margin-bottom: 10px;
 }
 
-.countHandler input {
-    width: 40px;
-    text-align: center;
-    font-weight: bolder;
+.countHandler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4rem;
+}
+
+.countHandler button{
+    margin-right: 1.5rem;
+}
+
+.countHandler p {
+    font-size: 22px;
 }
 
 .checkout button {

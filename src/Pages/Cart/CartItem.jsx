@@ -4,8 +4,8 @@ import {ShopContext} from "../../Context/shop-context.jsx";
 
 export const CartItem = ({data}) => {
     const {id, productName, price, productImage} = data;
-    const {cartItems, addToCart, removeFromCart, updateCartItemAmount} = useContext(ShopContext);
-
+    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext);
+    const cartItemAmount = cartItems[id];
     return(
         <div className="cartItem">
             {" "}
@@ -14,22 +14,25 @@ export const CartItem = ({data}) => {
                 <p><b>{productName}</b></p>
                 <p>${price}</p>
                 <div className="countHandler">
-                    <button onClick={() => removeFromCart(id)}> - </button>
-                    {/*<input*/}
-                    {/*    type={"dropdown"}*/}
-                    {/*    value={cartItems[id]}*/}
-                    {/*    // onChange={(e) => {updateCartItemAmount(Number(e.target.value), id)}}*/}
-                    {/*/>*/}
-                    {/*<label htmlFor="dropdown">Select an option:</label>*/}
-                    {/*<select id="dropdown">*/}
-                    {/*    <option value="">-- Select --</option>*/}
-                    {/*    <option value="option1">+ 1</option>*/}
-                    {/*    <option value="option2">Option 2</option>*/}
-                    {/*    <option value="option3">Option 3</option>*/}
-                    {/*</select>*/}
-                    <button onClick={() => addToCart(id)}> + </button>
+                    <div>
+                        <button onClick={() => removeFromCart(id)}> - </button>
+                        <button onClick={() => addToCart(id)}> + </button>
+                    </div>
+                    <p>QTY: {cartItemAmount}</p>
                 </div>
             </div>
         </div>
     )
 }
+{/*<input*/}
+{/*    type={"dropdown"}*/}
+{/*    value={cartItems[id]}*/}
+{/*    // onChange={(e) => {updateCartItemAmount(Number(e.target.value), id)}}*/}
+{/*/>*/}
+{/*<label htmlFor="dropdown">Select an option:</label>*/}
+{/*<select id="dropdown">*/}
+{/*    <option value="">-- Select --</option>*/}
+{/*    <option value="option1">+ 1</option>*/}
+{/*    <option value="option2">Option 2</option>*/}
+{/*    <option value="option3">Option 3</option>*/}
+{/*</select>*/}

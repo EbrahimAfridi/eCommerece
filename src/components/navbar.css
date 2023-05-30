@@ -26,3 +26,18 @@
     margin-left: 20px;
     font-size: 25px;
   }
+.cart-bubble{
+    position: absolute;
+    right: 44px;
+    top: 9px;
+    transform: rotate(-20deg);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}

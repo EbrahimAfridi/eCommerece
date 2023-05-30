@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import {PRODUCTS} from "../product.js";
 
 export const ShopContext = createContext(null);  //ctx created
@@ -8,11 +8,12 @@ const getDefaultCart = () => {
     for (let i = 1; i < PRODUCTS.length + 1; i++) {
         cart[i] = 0;
     }
-    // console.log(cart);
     return cart;
 }
 export const ShopContextProvider = ({children}) => {                             //provider function created
     const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [totalCartItemAmount, setTotalCartItemAmount] = useState(0); // Add totalCartItemAmount state
+
     const addToCart = (itemsId) => {
         setCartItems((prev) => (
             {...prev, [itemsId]: prev[itemsId] + 1}
@@ -41,12 +42,26 @@ export const ShopContextProvider = ({children}) => {                            
         return totalAmount;
     }
 
+    useEffect(() => {
+        updateTotalCartItemAmount(); // Update totalCartItemAmount whenever cartItems change
+    }, [cartItems]);
+
+    const updateTotalCartItemAmount = () => {    {/* Code for the cart bubble*/}
+        let totalAmount = 0;
+        for (const item in cartItems) {
+            totalAmount += cartItems[item];
+        }
+        setTotalCartItemAmount(totalAmount);
+    };
+
     const contextValue = {
         getTotalCartAmount,
         updateCartItemAmount,
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        totalCartItemAmount,
+        updateTotalCartItemAmount,
     };
 
     return(
