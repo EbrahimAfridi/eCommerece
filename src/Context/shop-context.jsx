@@ -13,12 +13,21 @@ const getDefaultCart = () => {
 export const ShopContextProvider = ({children}) => {                             //provider function created
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [totalCartItemAmount, setTotalCartItemAmount] = useState(0); // Add totalCartItemAmount state
+    const [selectedSizes, setSelectedSizes] = useState({});
+    const setSelectedSize = (productId, size) => {
+        setSelectedSizes((prevSizes) => ({ ...prevSizes, [productId]: size }));
+    };
 
+
+    const getSelectedSize = (productId) => {
+        return selectedSizes[productId] || "";
+    };
     const addToCart = (itemsId) => {
         setCartItems((prev) => (
             {...prev, [itemsId]: prev[itemsId] + 1}
         ));
     }
+
     const removeFromCart = (itemsId) => {
         setCartItems((prev) => (
             {...prev, [itemsId]: prev[itemsId] - 1}
@@ -62,6 +71,9 @@ export const ShopContextProvider = ({children}) => {                            
         removeFromCart,
         totalCartItemAmount,
         updateTotalCartItemAmount,
+        selectedSize: getSelectedSize,
+        setSelectedSize,
+
     };
 
     return(

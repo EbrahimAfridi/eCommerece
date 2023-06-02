@@ -1,14 +1,33 @@
-import { useState } from "react";
+import {useContext, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../../product.js";
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
+import {ShopContext} from "../../Context/shop-context.jsx";
 
 export const ProductPage = () => {
+  const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize} = useContext(ShopContext);
+  const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
+
+  const handleSizeChange = (e) => {
+    const selectedSize = e.target.value;
+    setSelectedOption(selectedSize); // Update selectedOption state
+    setSelectedSize(id, selectedSize); // Update the selected size in context
+  };
+  const handleAddToCart = (e) => {
+    e.preventDefault(); // Prevent the default behavior of the button
+    addToCart(id);
+  };
+  useEffect(() => {
+    updateTotalCartItemAmount(); // Update totalCartItemAmount whenever cartItems change
+  }, [cartItems,updateTotalCartItemAmount]);
+
+  // Router Code
   const { id } = useParams();
   const product = PRODUCTS.find((product) => product.id === parseInt(id));
-  const { productName, price, productImage, companyName, productDetails } =
-    product;
+  const { productName, price, productImage, companyName, productDetails, sizes } = product;
+
+  // Modal code
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
   const openModal = () => setShowModal(true);
@@ -33,16 +52,22 @@ export const ProductPage = () => {
         <p className="singleProductDescription">{productDetails}</p>
         <div className="sizeNAddToCart">
           <div className="upper">
-            <select className="sizeSelect">
-              <option>Select Size</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+            <select
+                className="sizeSelect"
+                value={selectedOption}
+                onChange={handleSizeChange}
+            >
+              <option value="">Select Size</option>
+              {sizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+              ))}
             </select>
             <button className="sizeSelect">Add to Wishlist</button>
           </div>
           <div className="lower">
-            <button className="addToCartBtn">Add to Cart</button>
+            <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart</button>
           </div>
         </div>
         {showModal && <MyModal closeModal={closeModal} openModal={openModal} />}
@@ -50,3 +75,5 @@ export const ProductPage = () => {
     </div>
   );
 };
+
+// TODO fix choosing different sizes of the same product

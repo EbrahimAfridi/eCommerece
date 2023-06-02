@@ -13,6 +13,8 @@ export const PRODUCTS = [
         productImage: nikeLows,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
+
     },
     {
         id: 2,
@@ -21,6 +23,7 @@ export const PRODUCTS = [
         productImage: YlwJrd,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
 
     },
     {
@@ -30,6 +33,7 @@ export const PRODUCTS = [
         productImage: Jrdn,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
 
     },
     {
@@ -39,6 +43,7 @@ export const PRODUCTS = [
         productImage: duncks,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
 
     },
     {
@@ -48,6 +53,7 @@ export const PRODUCTS = [
         productImage: GrnJrdn,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
 
     },
     {
@@ -57,6 +63,7 @@ export const PRODUCTS = [
         productImage: lowsNike,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
 
     },
     {
@@ -66,5 +73,6 @@ export const PRODUCTS = [
         productImage: nikeLows,
         companyName: "Nike",
         productDetails: "The latest iteration of the best-selling Run Star Hike, the Run Star Legacy CX mixes bold platform styling with premium comfort. A lightweight CX midsole and sockliner keep you light on your feet, while distorted Chuck Taylor design elements keep them guessing. A winged tongue and heel bumper allow for easy on and off, so nothing can slow you down.",
+        sizes: ["5 UK", "6 UK", "7 UK", "8 UK", "9UK", "10UK"],
     }
 ]

@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ShopContext } from "../../Context/shop-context.jsx";
 import { PRODUCTS } from "../../product.js";
 import { Product } from "./product.jsx";
 import "./Shop.css";
