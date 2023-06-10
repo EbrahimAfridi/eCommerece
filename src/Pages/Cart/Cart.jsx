@@ -17,7 +17,7 @@ export default function Cart (){
             </div>
             <div className="cartItems">
                 {PRODUCTS.map((product) => {
-                    if ( cartItems[product.id] !== 0 ){
+                    if ( cartItems[product.id] !== 0 ){     {/* checks if that product has been added using addToCart coz that sets cartItems and if that product is already present only then render product in cartItems if not then that product has not been added by user hence no need to add to cart*/}
                         return <CartItem key={product.id} data={product} test={1}/>;
                     }
                 })}

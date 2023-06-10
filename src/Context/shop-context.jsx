@@ -14,10 +14,10 @@ export const ShopContextProvider = ({children}) => {                            
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [totalCartItemAmount, setTotalCartItemAmount] = useState(0); // Add totalCartItemAmount state
     const [selectedSizes, setSelectedSizes] = useState({});
+    const [wishlistItems, setWishlistItems] = useState({});
     const setSelectedSize = (productId, size) => {
         setSelectedSizes((prevSizes) => ({ ...prevSizes, [productId]: size }));
     };
-
 
     const getSelectedSize = (productId) => {
         return selectedSizes[productId] || "";
@@ -33,6 +33,22 @@ export const ShopContextProvider = ({children}) => {                            
             {...prev, [itemsId]: prev[itemsId] - 1}
         ));
     }
+
+    const addToWishlist = (itemId) => {
+        setWishlistItems((prev) => ({
+            ...prev,
+            [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,
+        }));
+    };
+
+    const removeFromWishlist = (itemId) => {
+        setWishlistItems((prev) => {
+            const updatedWishlistItems = { ...prev };
+            delete updatedWishlistItems[itemId];
+            return updatedWishlistItems;
+        });
+    };
+
     const updateCartItemAmount = (newAmount, itemsId) => {
         if (newAmount > 0)
             setCartItems((prev) => (
@@ -73,9 +89,10 @@ export const ShopContextProvider = ({children}) => {                            
         updateTotalCartItemAmount,
         selectedSize: getSelectedSize,
         setSelectedSize,
-
-    };
-
+        removeFromWishlist,
+        addToWishlist,
+        wishlistItems,
+    }
     return(
         <ShopContext.Provider value={contextValue}>
             {children}

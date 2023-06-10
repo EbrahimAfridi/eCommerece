@@ -1,5 +1,5 @@
 .shopTitle {
-    margin-top: 70px;
+    margin-top: 30px;
     text-align: center;
     font-size: 40px;
     user-select: none;
@@ -8,7 +8,7 @@
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     place-items: center;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 15px;
     width: 300px;
     height: 350px;
-    margin: 60px;
+    /*margin: 60px;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -28,6 +28,7 @@
     width: 400px;
     object-fit: contain;
     user-select: none;
+    margin-bottom: 10px;
 }
 
 .product .description {

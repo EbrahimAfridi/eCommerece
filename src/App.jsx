@@ -5,6 +5,7 @@ import Shop from './Pages/Shop/Shop'
 import './App.css';
 import {ProductPage} from "./Pages/ProductPage/ProductPage.jsx";
 import {ShopContextProvider} from "./Context/shop-context.jsx";
+import {Wishlist} from "./Pages/Wishlist/Wishlist.jsx";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
               <Navbar/>
               <Routes>
                   <Route path='/' element={<Shop/>}/>
+                  <Route path='/wishlist' element={<Wishlist/>}/>
                   <Route path='/cart' element={<Cart/>}/>
                   <Route path='/productPage/:id' element={<ProductPage />} />
               </Routes>

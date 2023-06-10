@@ -6,7 +6,7 @@ import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
 
 export const ProductPage = () => {
-  const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize} = useContext(ShopContext);
+  const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize, addToWishlist} = useContext(ShopContext);
   const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
 
   const handleSizeChange = (e) => {
@@ -21,6 +21,11 @@ export const ProductPage = () => {
   useEffect(() => {
     updateTotalCartItemAmount(); // Update totalCartItemAmount whenever cartItems change
   }, [cartItems,updateTotalCartItemAmount]);
+
+  const handleAddToWishlist = (e) => {
+    e.preventDefault(); // Prevent the default behavior of the button
+    addToWishlist(id);
+  };
 
   // Router Code
   const { id } = useParams();
@@ -64,7 +69,7 @@ export const ProductPage = () => {
                   </option>
               ))}
             </select>
-            <button className="sizeSelect">Add to Wishlist</button>
+            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist</button>
           </div>
           <div className="lower">
             <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart</button>

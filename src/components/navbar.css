@@ -19,12 +19,14 @@
     display: flex;
     align-items: center;
   }
-  
+.links:hover{
+    cursor: pointer;
+}
   .links a {
     text-decoration: none;
     color: white;
     margin-left: 20px;
-    font-size: 25px;
+    font-size: 21px;
   }
 .cart-bubble{
     position: absolute;
@@ -39,5 +41,5 @@
     justify-content: space-evenly;
     align-items: center;
     color: white;
-    font-size: 18px;
+    font-size: 14px;
 }
