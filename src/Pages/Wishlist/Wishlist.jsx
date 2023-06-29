@@ -1,18 +1,3 @@
-// import {PRODUCTS} from "../../product.js";
-// import {CartItem} from "../Cart/CartItem.jsx";
-//
-//
-// export const Wishlist = () => {
-    // return(
-    //   <div className="wishlist">
-    //       <h1>Wishlist Items</h1>
-    //           <div className="cartItems">
-    //               {PRODUCTS.map((product) => {
-    //                   return <CartItem key={product.id} data={product} test={1} />
-    //                   })}
-    //           </div>
-    //   </div>
-    // );
 import { useContext } from "react";
 import { ShopContext } from "../../Context/shop-context.jsx";
 import { PRODUCTS } from "../../product.js";
@@ -33,7 +18,6 @@ export const Wishlist = () => {
             <div className="wishlistItems">
                 {PRODUCTS.map((product) => {
                     const quantity = wishlistItems[product.id] || 0;
-
                     if (quantity > 0) {
                         return (
                             <div key={product.id} className="wishlistItem">
@@ -51,7 +35,6 @@ export const Wishlist = () => {
                             </div>
                         );
                     }
-
                     return null;
                 })}
             </div>

@@ -36,15 +36,15 @@ export const ShopContextProvider = ({children}) => {                            
 
     const addToWishlist = (itemId) => {
         setWishlistItems((prev) => ({
-            ...prev,
-            [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,
+            ...prev,                                        /*storing all old products */
+            [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,   /*checking if product exist already if yes than inc. qty + 1 else set qty = 1*/
         }));
     };
 
     const removeFromWishlist = (itemId) => {
         setWishlistItems((prev) => {
-            const updatedWishlistItems = { ...prev };
-            delete updatedWishlistItems[itemId];
+            const updatedWishlistItems = { ...prev };     /* making new var. store all old*/
+            delete updatedWishlistItems[itemId];          /* deleting specific product by id*/
             return updatedWishlistItems;
         });
     };

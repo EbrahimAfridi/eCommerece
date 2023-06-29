@@ -2,6 +2,7 @@ import { PRODUCTS } from "../../product.js";
 import { Product } from "./product.jsx";
 import "./Shop.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer.jsx";
 
 export default function Shop() {
   return (
@@ -16,6 +17,7 @@ export default function Shop() {
           </Link>
         ))}
       </div>
+     <Footer/>
     </div>
   );
 }

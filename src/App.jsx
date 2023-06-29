@@ -6,6 +6,7 @@ import './App.css';
 import {ProductPage} from "./Pages/ProductPage/ProductPage.jsx";
 import {ShopContextProvider} from "./Context/shop-context.jsx";
 import {Wishlist} from "./Pages/Wishlist/Wishlist.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
     return (

@@ -4,6 +4,7 @@ import { PRODUCTS } from "../../product.js";
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
+import {Heart, ShoppingCart} from "phosphor-react";
 
 export const ProductPage = () => {
   const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize, addToWishlist} = useContext(ShopContext);
@@ -24,7 +25,7 @@ export const ProductPage = () => {
 
   const handleAddToWishlist = (e) => {
     e.preventDefault(); // Prevent the default behavior of the button
-    addToWishlist(id);
+    addToWishlist(id);  // using context 
   };
 
   // Router Code
@@ -62,17 +63,17 @@ export const ProductPage = () => {
                 value={selectedOption}
                 onChange={handleSizeChange}
             >
-              <option value="">Select Size</option>
+              <option >Select Size</option>
               {sizes.map((size) => (
                   <option key={size} value={size}>
                     {size}
                   </option>
               ))}
             </select>
-            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist</button>
+            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist <Heart size={18}/> </button>
           </div>
           <div className="lower">
-            <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart</button>
+            <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart <ShoppingCart size={22}/> </button>
           </div>
         </div>
         {showModal && <MyModal closeModal={closeModal} openModal={openModal} />}
