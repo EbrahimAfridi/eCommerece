@@ -10,10 +10,10 @@ export default function Shop() {
       <div className="shopTitle">
         <h1>Sneakers</h1>
       </div>
-      <div className="products">
+      <div className="products grid grid-cols-4 gap-4 px-5">
         {PRODUCTS.map((product) => (
           <Link to={`/productPage/${product.id}`} key={product.id}>
-            <Product key={product.id} data={product} />
+              <Product key={product.id} data={product} />
           </Link>
         ))}
       </div>

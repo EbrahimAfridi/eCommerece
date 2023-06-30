@@ -1,15 +1,17 @@
 import {Link} from "react-router-dom";
-import {Heart, MagnifyingGlass, ShoppingCart} from "phosphor-react";
+import { Heart, MagnifyingGlass, ShoppingCart} from "phosphor-react";
 import './navbar.css';
 import {useContext} from "react";
 import {ShopContext} from "../Context/shop-context.jsx";
 import {PRODUCTS} from "../product.js";
+import Dropdown from "./Dropdown.jsx";
 
 export default function Navbar (){
     const { totalCartItemAmount } = useContext(ShopContext); // Get the totalCartItemAmount from the context
     const product = PRODUCTS;
     return(
         <div className="navbar">
+            <Dropdown/>
             <Link style={{ textDecoration: 'none' }} to="/"> <p>Sneakers</p> </Link>
             <div className="links">
                 <MagnifyingGlass size={25} color="#f1efef"/>
