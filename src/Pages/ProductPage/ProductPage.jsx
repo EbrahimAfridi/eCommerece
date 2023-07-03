@@ -4,7 +4,7 @@ import { PRODUCTS } from "../../product.js";
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
-import {Heart, ShoppingCart} from "phosphor-react";
+import {Heart, ShoppingBag, ShoppingCart} from "phosphor-react";
 
 export const ProductPage = () => {
   const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize, addToWishlist} = useContext(ShopContext);
@@ -70,7 +70,7 @@ export const ProductPage = () => {
                   </option>
               ))}
             </select>
-            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist <Heart size={18}/> </button>
+            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist <ShoppingBag size={18}/> </button>
           </div>
           <div className="lower">
             <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart <ShoppingCart size={22}/> </button>

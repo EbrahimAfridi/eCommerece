@@ -42,7 +42,6 @@
     margin-bottom: 8px;
     font-size: 14px;
 }
-
 .remove {
     color: #ff0000;
     cursor: pointer;
@@ -51,4 +50,9 @@
 .remove:hover {
    color: #cc0000;
 }
+
+.add{
+    cursor: pointer;
+}
+
 

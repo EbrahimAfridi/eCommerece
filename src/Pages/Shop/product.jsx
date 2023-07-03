@@ -12,19 +12,19 @@ export const Product = (props) => {
   };
 
   return (
-      <div className="product bg-white bg-red-100">
+      <div className="product bg-white">
           <div className="image-div bg-slate-100 mb-10 p-4">
               <div className="image-container">
                   <img src={productImage} alt={productName} className="blend-mode bg-transparent" />
               </div>
           </div>
-          <div className="description flex justify-between gap-5 bg-white">
+          <div className="description flex justify-between gap-5 selection:bg-black selection:text-white bg-white">
               <p>
                   <b>{productName.length > 20 ? `${productName.slice(0, 20)}...` : productName}</b>
               </p>
               <p>${price}</p>
           </div>
-          <div className="cart-div py-1 items-center justify-end flex bg-white mt-2 mb-4">
+          <div className="cart-div py-1 items-center justify-end selection:bg-white selection:text-black flex bg-white mt-2 mb-4">
               <button className="addToCartBttn bg-black text-white p-1" onClick={handleAddToCart}>
                   Add to Cart {cartItemAmount > 0 && <> [{cartItemAmount}] </>}
               </button>

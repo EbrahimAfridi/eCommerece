@@ -22,11 +22,12 @@ export const ShopContextProvider = ({children}) => {                            
     const getSelectedSize = (productId) => {
         return selectedSizes[productId] || "";
     };
-    const addToCart = (itemsId) => {
-        setCartItems((prev) => (
-            {...prev, [itemsId]: prev[itemsId] + 1}
-        ));
-    }
+    const addToCart = (itemId) => {
+        setCartItems((prev) => ({
+            ...prev,
+            [itemId]: prev[itemId] + 1,
+        }));
+    };
 
     const removeFromCart = (itemsId) => {
         setCartItems((prev) => (
