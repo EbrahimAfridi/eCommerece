@@ -1,14 +1,17 @@
 import {useContext, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { PRODUCTS } from "../../product.js";
+import axios from 'axios';
+// import { PRODUCTS } from "../../product.js";   //old code obj
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
-import {Heart, ShoppingBag, ShoppingCart} from "phosphor-react";
+import {ShoppingBag, ShoppingCart} from "phosphor-react";
 
 export const ProductPage = () => {
-  const {addToCart, updateTotalCartItemAmount, cartItems, setSelectedSize, addToWishlist} = useContext(ShopContext);
+  const {addToCart, updateTotalCartItemAmount, cartItems, addToWishlist, setSelectedSize,} = useContext(ShopContext);  
   const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
+  const [product, setProduct] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSizeChange = (e) => {
     const selectedSize = e.target.value;
@@ -30,47 +33,68 @@ export const ProductPage = () => {
 
   // Router Code
   const { id } = useParams();
-  const product = PRODUCTS.find((product) => product.id === parseInt(id));
-  const { productName, price, productImage, companyName, productDetails, sizes } = product;
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/sneakers/${id}`);
+        setProduct(response.data);
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  const { name, price, image, description, sizes } = product; // Include sizes in destructuring
+
+
+  // old code obj 2 lines
+  // const product = PRODUCTS.find((product) => product.id === parseInt(id));
+  // const { productName, price, productImage, companyName, productDetails, sizes } = product;
 
   // Modal code
-  const [showModal, setShowModal] = useState(false);
   const closeModal = () => setShowModal(false);
   const openModal = () => setShowModal(true);
 
   return (
-    <div className="singleProduct ">
+    <div className="mb-20 singleProduct">
       <div className="singleProductImage">
-        <img src={productImage} alt={productName} />
+        <img src={image} alt={name} />
       </div>
       <div className="singleProductDetails">
         <div className="coNameAndSize">
-          <p>{companyName}</p>
+          <p>{name}</p>
           <button onClick={() => setShowModal(true)}>Size Guide</button>
         </div>
-        <div className="singleProductNameAndPrice">
+        <div className="singleProductNameAndPrice ">
           <p>
-            <b>{productName}</b>
+            <b>{name}</b>
           </p>
           <p className="price">${price}</p>
           <p className="taxDesc">inclusive of all taxes</p>
         </div>
-        <p className="singleProductDescription">{productDetails}</p>
-        <div className="sizeNAddToCart">
+        <p className="singleProductDescription w-[100%] basis-1/3 ">{description}</p>
+        
+        <div className="basis-1/3 sizeNAddToCart">
           <div className="upper">
             <select
-                className="sizeSelect"
-                value={selectedOption}
-                onChange={handleSizeChange}
+              className="sizeSelect"
+              value={selectedOption}
+              onChange={handleSizeChange}
             >
-              <option >Select Size</option>
+              <option>Select Size</option>
               {sizes.map((size) => (
-                  <option key={size} value={size}>
-                    {size}
-                  </option>
+                <option key={size} value={size}>
+                  {size}
+                </option>
               ))}
             </select>
-            <button className="sizeSelect" onClick={handleAddToWishlist}>Add to Wishlist <ShoppingBag size={18}/> </button>
+            <button className="sizeSelect" onClick={handleAddToWishlist}> Add to Wishlist <ShoppingBag className="bag-icon"/> </button>
           </div>
           <div className="lower">
             <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart <ShoppingCart size={22}/> </button>

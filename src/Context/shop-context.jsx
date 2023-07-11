@@ -1,20 +1,24 @@
 import {createContext, useEffect, useState} from "react";
-import {PRODUCTS} from "../product.js";
+// import {PRODUCTS} from "../product.js";    //old code obj
 
 export const ShopContext = createContext(null);  //ctx created
 
-const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < PRODUCTS.length + 1; i++) {
-        cart[i] = 0;
-    }
-    return cart;
-}
+// const getDefaultCart = () => {
+//     let cart = {};
+//     for (let i = 1; i < PRODUCTS.length + 1; i++) {
+//         cart[i] = 0;
+//     }
+//     return cart;
+// }
 export const ShopContextProvider = ({children}) => {                             //provider function created
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    // const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [cartItems, setCartItems] = useState({});
     const [totalCartItemAmount, setTotalCartItemAmount] = useState(0); // Add totalCartItemAmount state
     const [selectedSizes, setSelectedSizes] = useState({});
     const [wishlistItems, setWishlistItems] = useState({});
+    const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     const setSelectedSize = (productId, size) => {
         setSelectedSizes((prevSizes) => ({ ...prevSizes, [productId]: size }));
     };
@@ -22,18 +26,36 @@ export const ShopContextProvider = ({children}) => {                            
     const getSelectedSize = (productId) => {
         return selectedSizes[productId] || "";
     };
+    // const addToCart = (itemId) => {
+    //     setCartItems((prev) => ({
+    //         ...prev,
+    //         [itemId]: prev[itemId] + 1,
+    //     }));
+    // };
+
     const addToCart = (itemId) => {
         setCartItems((prev) => ({
             ...prev,
-            [itemId]: prev[itemId] + 1,
+            [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,
         }));
     };
 
-    const removeFromCart = (itemsId) => {
-        setCartItems((prev) => (
-            {...prev, [itemsId]: prev[itemsId] - 1}
-        ));
-    }
+    // const removeFromCart = (itemsId) => {
+    //     setCartItems((prev) => (
+    //         {...prev, [itemsId]: prev[itemsId] - 1}
+    //     ));
+    // }
+
+    const removeFromCart = (itemId) => {
+        setCartItems((prev) => {
+            const updatedCartItems = { ...prev };
+            if (updatedCartItems[itemId] > 0) {
+                updatedCartItems[itemId] -= 1;
+            }
+            return updatedCartItems;
+        });
+    };
+
 
     const addToWishlist = (itemId) => {
         setWishlistItems((prev) => ({
@@ -57,16 +79,27 @@ export const ShopContextProvider = ({children}) => {                            
             ));
     }
 
+    // const getTotalCartAmount = () => {
+    //     let totalAmount = 0;
+    //     for(const item in cartItems){
+    //         if(cartItems[item] > 0){
+    //             let  itemInfo = PRODUCTS.find((product) => product.id === Number(item));
+    //             totalAmount += cartItems[item] * itemInfo.price;
+    //         }
+    //     }
+    //     return totalAmount;
+    // }
+
     const getTotalCartAmount = () => {
         let totalAmount = 0;
-        for(const item in cartItems){
-            if(cartItems[item] > 0){
-                let  itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-                totalAmount += cartItems[item] * itemInfo.price;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                const product = products.find((p) => p.id === Number(item));
+                totalAmount += cartItems[item] * product.price;
             }
         }
         return totalAmount;
-    }
+    };
 
     useEffect(() => {
         updateTotalCartItemAmount(); // Update totalCartItemAmount whenever cartItems change
@@ -79,6 +112,19 @@ export const ShopContextProvider = ({children}) => {                            
         }
         setTotalCartItemAmount(totalAmount);
     };
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/sneakers")
+            .then((response) => response.json())
+            .then((data) => {
+                setProducts(data);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.log("Error fetching products:", error);
+                setIsLoading(false);
+            });
+    }, []);
 
     const contextValue = {
         getTotalCartAmount,
@@ -93,6 +139,8 @@ export const ShopContextProvider = ({children}) => {                            
         removeFromWishlist,
         addToWishlist,
         wishlistItems,
+        products,
+        isLoading
     }
     return(
         <ShopContext.Provider value={contextValue}>

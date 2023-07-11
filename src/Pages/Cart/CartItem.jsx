@@ -14,9 +14,9 @@ export const CartItem = ({ data }) => {
                     <b>{productName}</b>
                 </p>
                 <p>${price}</p>
-                <div className="countHandler">
+                <div className="countHandler bg-red-300 p-4">
                     <div>
-                        <button onClick={() => removeFromCart(id)}> - </button>
+                        <button onClick={() => removeFromCart(id)} className="" > - </button>
                         <button onClick={() => addToCart(id)}> + </button>
                     </div>
                     <p>QTY: {cartItemAmount}</p>

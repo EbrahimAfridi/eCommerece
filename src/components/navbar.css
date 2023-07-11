@@ -9,13 +9,13 @@
   }
   .navbar p{
       color: whitesmoke;
-      font-size: 30px;
-      margin-left: 3rem;
+      /* font-size: 20px; */
+      /* margin-left: 3rem; */
       font-weight: bold;
       text-decoration: none;
   }
   .links {
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
     display: flex;
     align-items: center;
   }
@@ -28,18 +28,18 @@
     margin-left: 20px;
     font-size: 21px;
   }
-.cart-bubble{
+/* .cart-bubble{
     position: absolute;
     right: 44px;
-    top: 9px;
+    top: 9px; 
     transform: rotate(-20deg);
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-}
+    border-radius: 50%; */
+    /* width: 15px;
+    height: 15px; */
+    /* background-color: whitesmoke; */
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    /* color: black; */
+    /* font-size: 11px;
+} */

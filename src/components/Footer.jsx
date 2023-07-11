@@ -1,30 +1,30 @@
-import {InstagramLogo, TwitterLogo} from "phosphor-react";
+// import {InstagramLogo, TwitterLogo} from "phosphor-react";
 import "./Footer.css";
 const Footer = () => {
     return(
-        <footer className="flex flex-row selection:bg-white gap-2 bg-black text-white py-20 pl-10 pr-0">
+        <footer className="flex flex-col gap-2 px-4 py-10 text-white bg-black sm:pl-10 sm:pr-0 sm:py-20 sm:flex-row selection:bg-white">
             <div className="basis-[40%] selection:text-black">
-                <h3 className="text-3xl font-bold mb-2">SneakEarth</h3>
+                <h3 className="mb-2 text-3xl font-bold">SneakEarth</h3>
                 <p className="text-lg">Explore the world of sneakers.</p>
             </div>
             <div className="basis-[20%] selection:text-black">
-                <p className="mb-5">
-                    <span className="text-xl mb-2 hover:text-[#d3d3d3]">About</span>
-                </p>
-                <p>
-                    <span className="hover:text-[#d3d3d3]">About us</span>
-                </p>
-                <p>
-                    <span className="hover:text-[#d3d3d3]">Features</span>
-                </p>
-                <p>
-                    <span className="hover:text-[#d3d3d3]">News & Blog</span>
-                </p>
+                <div className="mt-4 mb-3 sm:mb-5 sm:mt-0">
+                    <p className="text-xl mt-4 sm:mt-0 sm:mb-2 mb-0 hover:text-[#d3d3d3]">About</p>
+                </div>
+                <div>
+                    <p className="hover:text-[#d3d3d3]">About us</p>
+                </div>
+                <div>
+                    <p className="hover:text-[#d3d3d3]">Features</p>
+                </div>
+                <div>
+                    <p className="hover:text-[#d3d3d3]">News & Blog</p>
+                </div>
             </div>
             <div className="basis-[20%] selection:text-black">
-                <p className="mb-5">
-                    <span className="text-xl mb-2 hover:text-[#d3d3d3]">Connect</span>
-                </p>
+            <div className="mt-4 mb-3 sm:mb-5 sm:mt-0">
+                    <p className="text-xl mb-2 hover:text-[#d3d3d3]">Connect</p>
+                </div>
                 <p>
                     <a
                         className="hover:text-[#d3d3d3]"
@@ -57,18 +57,18 @@ const Footer = () => {
                 </p>
             </div>
             <div className="basis-[20%] selection:text-black">
-                <p className="mb-5">
-                    <span className="text-xl mb-2 hover:text-[#d3d3d3]">Support</span>
-                </p>
-            <p>
-                    <span className="hover:text-[#d3d3d3]">FAQs</span>
-                </p>
-                <p>
-                    <span className="hover:text-[#d3d3d3]">Support Center</span>
-                </p>
-                <p>
-                    <span className="hover:text-[#d3d3d3]">Contact us</span>
-                </p>
+            <div className="mt-4 mb-3 sm:mb-5 sm:mt-0">
+                    <p className="text-xl mb-2 hover:text-[#d3d3d3]">Support</p>
+                </div>
+            <   div>
+                    <p className="hover:text-[#d3d3d3]">FAQs</p>
+                </div>
+                <div>
+                    <p className="hover:text-[#d3d3d3]">Support Center</p>
+                </div>
+                <div>
+                    <p className="hover:text-[#d3d3d3]">Contact us</p>
+                </div>
             </div>
         </footer>
     )
