@@ -34,16 +34,10 @@ export const ProductPage = () => {
   // Router Code
   const { id } = useParams();
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3000/api/sneakers/${id}`);
-        setProduct(response.data);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
-
-    fetchProduct();
+    if (product.length > 0){
+      const response = product.filter(product => product.id === id);
+      setProduct(response);
+    }
   }, [id]);
 
   if (!product) {

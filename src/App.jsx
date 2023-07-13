@@ -50,7 +50,6 @@ function App() {
                         <Route path="/cart" element={<NewCart />} />
                         <Route path="/productPage/:id" element={<ProductPage />} />
                     </Routes>
-                    {/* <NewFooter/> */}
                 </BrowserRouter>
             </ShopContextProvider>
         </div>

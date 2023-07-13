@@ -114,17 +114,28 @@ export const ShopContextProvider = ({children}) => {                            
     };
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/sneakers")
+        // fetch("http://localhost:3000/api/sneakers")
+        fetch("https://ebrahimafridi.github.io/sneakersAPI/sneaker.json")
             .then((response) => response.json())
             .then((data) => {
-                setProducts(data);
+                setProducts(data.sneakers);
                 setIsLoading(false);
+                console.log(data.sneakers);
             })
             .catch((error) => {
                 console.log("Error fetching products:", error);
                 setIsLoading(false);
             });
     }, []);
+
+    // const getData = async()=>{
+    //     const data = await axios.get('https://kaifayazkhan.github.io/api/sneakers.json');
+    //     console.log(data.data.sneakers);
+    // }
+    //
+    // useEffect(() => {
+    //     getData();
+    // }, [])
 
     const contextValue = {
         getTotalCartAmount,
