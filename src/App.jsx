@@ -30,7 +30,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import { BrowserRouter } from 'react-router-dom';
 import Navbar from "./components/navbar";
 // import Shop from './Pages/Shop/Shop.jsx';
-import Shop from "./pages/Shop/Shop.jsx";
+import Shop from "./Pages/Shop/Shop.jsx";
 import './App.css';
 import { ProductPage } from "./Pages/ProductPage/ProductPage.jsx";
 import { ShopContextProvider } from "./Context/shop-context.jsx";
