@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
+// import axios from 'axios';
 // import { PRODUCTS } from "../../product.js";   //old code obj
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
@@ -8,8 +8,7 @@ import {ShopContext} from "../../Context/shop-context.jsx";
 import {ShoppingBag, ShoppingCart} from "phosphor-react";
 
 export const ProductPage = () => {
-  const {addToCart, updateTotalCartItemAmount, cartItems, addToWishlist, setSelectedSize,} = useContext(ShopContext);  
-  const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
+  const {addToCart, updateTotalCartItemAmount, cartItems, addToWishlist, setSelectedSize,products} = useContext(ShopContext);  const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
   const [product, setProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -34,11 +33,11 @@ export const ProductPage = () => {
   // Router Code
   const { id } = useParams();
   useEffect(() => {
-    if (product.length > 0){
-      const response = product.filter(product => product.id === id);
-      setProduct(response);
-    }
-  }, [id]);
+    const singleData = products.find((product) => product.id === parseInt(id));
+    setProduct(singleData);
+    console.log("data",singleData)
+
+  }, [id,products]);
 
   if (!product) {
     return <div>Loading...</div>;
