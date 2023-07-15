@@ -1,17 +1,7 @@
 import {createContext, useEffect, useState} from "react";
-// import {PRODUCTS} from "../product.js";    //old code obj
-
 export const ShopContext = createContext(null);  //ctx created
 
-// const getDefaultCart = () => {
-//     let cart = {};
-//     for (let i = 1; i < PRODUCTS.length + 1; i++) {
-//         cart[i] = 0;
-//     }
-//     return cart;
-// }
 export const ShopContextProvider = ({children}) => {                             //provider function created
-    // const [cartItems, setCartItems] = useState(getDefaultCart());
     const [cartItems, setCartItems] = useState({});
     const [totalCartItemAmount, setTotalCartItemAmount] = useState(0); // Add totalCartItemAmount state
     const [selectedSizes, setSelectedSizes] = useState({});
@@ -26,12 +16,6 @@ export const ShopContextProvider = ({children}) => {                            
     const getSelectedSize = (productId) => {
         return selectedSizes[productId] || "";
     };
-    // const addToCart = (itemId) => {
-    //     setCartItems((prev) => ({
-    //         ...prev,
-    //         [itemId]: prev[itemId] + 1,
-    //     }));
-    // };
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({
@@ -39,12 +23,6 @@ export const ShopContextProvider = ({children}) => {                            
             [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,
         }));
     };
-
-    // const removeFromCart = (itemsId) => {
-    //     setCartItems((prev) => (
-    //         {...prev, [itemsId]: prev[itemsId] - 1}
-    //     ));
-    // }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev) => {
@@ -79,17 +57,6 @@ export const ShopContextProvider = ({children}) => {                            
             ));
     }
 
-    // const getTotalCartAmount = () => {
-    //     let totalAmount = 0;
-    //     for(const item in cartItems){
-    //         if(cartItems[item] > 0){
-    //             let  itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-    //             totalAmount += cartItems[item] * itemInfo.price;
-    //         }
-    //     }
-    //     return totalAmount;
-    // }
-
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
@@ -114,28 +81,18 @@ export const ShopContextProvider = ({children}) => {                            
     };
 
     useEffect(() => {
-        // fetch("http://localhost:3000/api/sneakers")
         fetch("https://ebrahimafridi.github.io/sneakersAPI/sneaker.json")
             .then((response) => response.json())
             .then((data) => {
                 setProducts(data.sneakers);
                 setIsLoading(false);
-                console.log(data.sneakers);
+                // console.log(data.sneakers);
             })
             .catch((error) => {
                 console.log("Error fetching products:", error);
                 setIsLoading(false);
             });
     }, []);
-
-    // const getData = async()=>{
-    //     const data = await axios.get('https://kaifayazkhan.github.io/api/sneakers.json');
-    //     console.log(data.data.sneakers);
-    // }
-    //
-    // useEffect(() => {
-    //     getData();
-    // }, [])
 
     const contextValue = {
         getTotalCartAmount,

@@ -1,15 +1,6 @@
-// import nikeLows from './src/assets/nike shoes.webp'
-// import lowsNike from './src/assets/nike shoes.webp'
-// import GrnJrdn from './src/assets/nike shoes.webp'
-// import duncks from './src/assets/nike shoes.webp'
-// import Jrdn from './src/assets/nike shoes.webp'
-// import YlwJrd from './src/assets/yellow jordan.webp';
-// import photo from './src/assets/4.jpg'; 
-
 import express from 'express';
 import Joi from 'joi';
 import cors from 'cors';
-
 
 const app = express();
 app.use(express.json());

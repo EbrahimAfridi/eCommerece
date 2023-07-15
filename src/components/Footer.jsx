@@ -1,4 +1,3 @@
-// import {InstagramLogo, TwitterLogo} from "phosphor-react";
 import "./Footer.css";
 const Footer = () => {
     return(

@@ -6,9 +6,10 @@ import {ShopContext} from "../../Context/shop-context.jsx";
 import {ShoppingBag, ShoppingCart} from "phosphor-react";
 
 export const ProductPage = () => {
+
   const {addToCart, updateTotalCartItemAmount, cartItems, addToWishlist, setSelectedSize,products} = useContext(ShopContext);  const [selectedOption, setSelectedOption] = useState(""); // Add selectedOption state
-  const [product, setProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [product, setProduct] = useState(null);
 
   const handleSizeChange = (e) => {
     const selectedSize = e.target.value;
@@ -42,11 +43,6 @@ export const ProductPage = () => {
   }
 
   const { companyName, name, price, image, description, sizes } = product; // Include sizes in destructuring
-
-
-  // old code obj 2 lines
-  // const product = PRODUCTS.find((product) => product.id === parseInt(id));
-  // const { productName, price, productImage, companyName, productDetails, sizes } = product;
 
   // Modal code
   const closeModal = () => setShowModal(false);
