@@ -1,7 +1,7 @@
 import "./Footer.css";
 const Footer = () => {
     return(
-        <footer className="flex flex-col gap-2 px-4 py-10 mt-[180px] text-white bg-black sm:pl-10 sm:pr-[0px] sm:py-[110px] sm:flex-row selection:bg-white">
+        <footer className="flex flex-col gap-2 px-4 py-10 mt-[120px] text-white bg-black sm:pl-10 sm:pr-[0px] sm:py-[110px] sm:flex-row selection:bg-white">
             <div className="basis-[40%] selection:text-black">
                 <h3 className="mb-2 text-3xl font-bold">SneakEarth</h3>
                 <p className="text-lg">Explore the world of sneakers.</p>
