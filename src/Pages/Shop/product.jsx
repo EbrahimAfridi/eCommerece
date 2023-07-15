@@ -100,14 +100,14 @@ export const Product = (props) => {
 
 
     return (
-        <div className=''>
+        <div className='mt-10'>
             {/* <div className="bg-white product" onClick={handleProductClick}> */}
                 <div className="flex items-start mb-1 sm:mb-3 image-div" onClick={handleProductClick}>  {/*bg-slate-100*/}
                     <div className="image-container w-[300px] flex items-center justify-center">
                         <img src={image} alt={name} className="bg-transparent mix-blend-multiply" />
                     </div>
                 </div>
-                <div className="flex justify-between text-xs bg-white sm:mt-4 sm:text-lg sm:gap-5 description selection:bg-black selection:text-white" >
+                <div className="flex justify-between text-xs bg-white sm:mt-4 sm:text-[15px] sm:gap-5 description selection:bg-black selection:text-white" >
                     <p>
                         <b>{name.length > 20 ? `${name.slice(0, 20)}...` : name}</b>
                     </p>

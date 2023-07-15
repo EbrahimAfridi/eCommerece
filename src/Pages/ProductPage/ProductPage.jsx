@@ -1,7 +1,5 @@
 import {useContext, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-// import axios from 'axios';
-// import { PRODUCTS } from "../../product.js";   //old code obj
 import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
@@ -43,7 +41,7 @@ export const ProductPage = () => {
     return <div>Loading...</div>;
   }
 
-  const { name, price, image, description, sizes } = product; // Include sizes in destructuring
+  const { companyName, name, price, image, description, sizes } = product; // Include sizes in destructuring
 
 
   // old code obj 2 lines
@@ -61,7 +59,7 @@ export const ProductPage = () => {
       </div>
       <div className="singleProductDetails">
         <div className="coNameAndSize">
-          <p>{name}</p>
+          <p>{companyName}</p>
           <button onClick={() => setShowModal(true)}>Size Guide</button>
         </div>
         <div className="singleProductNameAndPrice ">

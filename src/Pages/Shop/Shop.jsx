@@ -71,9 +71,9 @@ export default function Shop() {
 
   return (
     <div className="shop">
-      <div className="pl-5 mt-2 mb-4 text-2xl font-bold shopTitle selection:bg-black selection:text-white">
-        <h1>Sneakers</h1>
-      </div>
+      {/*<div className="pl-5 mt-3 mb-10 text-2xl font-bold shopTitle selection:bg-black selection:text-white">*/}
+      {/*  <h1>Sneakers</h1>*/}
+      {/*</div>*/}
       <div className="grid grid-cols-2 gap-4 px-5 sm:grid-cols-4 products">
         {isLoading ? (
           <div>Loading...</div>
