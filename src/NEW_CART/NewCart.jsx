@@ -46,7 +46,7 @@ const NewCart = () => {
                 </div>
             ) : (
                 <div>
-                    <h1>Your cart is empty</h1>
+                    <h1 className="text-center mr-20 font-bold mt-16 text-2xl">YOUR CART IS EMPTY</h1>
                 </div>
             )}
         </>

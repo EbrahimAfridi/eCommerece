@@ -96,6 +96,48 @@
     color: #100f10;
 }
 
+/*.addToWishlist{*/
+/*    transform: translate(0%, 0%) scale(1);*/
+/*    transition: transform ease 0.8s;*/
+/*}*/
+
+.bike-animation{
+    animation: bikeAnimation 2s ease-in-out;
+}
+
+@keyframes bikeAnimation {
+    0% {
+        transform: rotate(-45deg);
+    }
+    25% {
+        transform: translateX(90px) rotate(-45deg);
+    }
+    75% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.rotate-animation {
+     animation: rotateAnimation 2s ease-in-out;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(18deg);
+    }
+    75% {
+        transform: rotate(-18deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 .addToCartBtn {
     width: 420px;

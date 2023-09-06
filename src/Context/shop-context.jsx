@@ -10,11 +10,14 @@ export const ShopContextProvider = ({children}) => {                            
     const [isLoading, setIsLoading] = useState(true);
 
     const setSelectedSize = (productId, size) => {
-        setSelectedSizes((prevSizes) => ({ ...prevSizes, [productId]: size }));
+        setSelectedSizes((prevSizes) => ({
+                ...prevSizes,
+                [productId]: size
+        }));
     };
 
     const getSelectedSize = (productId) => {
-        return selectedSizes[productId] || "";
+        return selectedSizes[productId] || "";   //here sizes state is used coz it has all data
     };
 
     const addToCart = (itemId) => {
@@ -38,7 +41,8 @@ export const ShopContextProvider = ({children}) => {                            
     const addToWishlist = (itemId) => {
         setWishlistItems((prev) => ({
             ...prev,                                        /*storing all old products */
-            [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,   /*checking if product exist already if yes than inc. qty + 1 else set qty = 1*/
+            // [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,   /*checking if product exist already if yes than inc. qty + 1 else set qty = 1*/
+            [itemId]: 1,
         }));
     };
 
@@ -102,7 +106,7 @@ export const ShopContextProvider = ({children}) => {                            
         removeFromCart,
         totalCartItemAmount,
         updateTotalCartItemAmount,
-        selectedSize: getSelectedSize,
+        selectedSize: getSelectedSize,   //here the name size is used coz sizes is already a name of a state, and it is singular too.
         setSelectedSize,
         removeFromWishlist,
         addToWishlist,

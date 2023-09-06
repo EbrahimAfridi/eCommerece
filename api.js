@@ -65,7 +65,7 @@ const sneakers = [
       name: "Puma Suede Classic",
       price: 90,
       description: "A classic sneaker that's been popular for decades.",
-      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"], 
+      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],
       image: "https://i.imgur.com/USnpjCD.jpg",
     },
     {
@@ -81,15 +81,15 @@ const sneakers = [
       name: "On Cloud X",
       price: 160,
       description: "A lightweight and responsive running shoe that's perfect for speedwork.",
-      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],  
-      image: "https://i.imgur.com/9AcUfuA.jpg", 
+      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],
+      image: "https://i.imgur.com/9AcUfuA.jpg",
     },
     {
       id: 10,
       name: "Brooks Ghost 14",
       price: 140,
       description: "A cushioned and supportive running shoe that's perfect for long runs.",
-      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],   
+      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],
       image: "https://i.imgur.com/l9oeWaB.jpg" ,
     },
     {
@@ -97,12 +97,12 @@ const sneakers = [
       name: "Brooks Ghost 14",
       price: 140,
       description: "A cushioned and supportive running shoe that's perfect for long runs.",
-      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],   
+      sizes: ["UK6", "UL7", "UK8", "UK9", "UK10"],
       image: "https://i.imgur.com/29uC8Vw.jpg" ,
     },
-  ];
+];
 
-  
+
 // Define the Joi schema for validating sneaker data
 const sneakerSchema = Joi.object({
     name: Joi.string().required(),
@@ -125,7 +125,7 @@ app.get('/api/sneakers/:id', (req, res) => {
     if (!sneaker) {
         return res.status(404).send('Sneaker not found');
     }
-    
+
     const { sizes, ...sneakerData } = sneaker; // Destructure sizes from sneaker object
 
     const response = {
