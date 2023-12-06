@@ -2,7 +2,12 @@ import { useContext, useEffect } from "react";
 import { ShopContext } from "../../Context/shop-context.jsx";
 import { useNavigate } from "react-router-dom";
 import './Wishlist.css';
+import {useFirebase} from "../../auth/FirebaseContext.jsx";
+
 export const Wishlist = () => {
+    const {user, logout} = useFirebase();
+    const navigate = useNavigate();
+
     const {
         wishlistItems,
         updateTotalCartItemAmount,
@@ -12,8 +17,6 @@ export const Wishlist = () => {
         addToCart,
         products,
     } = useContext(ShopContext);
-    
-    const navigate = useNavigate();
     
     const handleProductClick = (productId) => {
         navigate(`/productPage/${productId}`);
@@ -28,6 +31,15 @@ export const Wishlist = () => {
         addToCart(productId);
     };
 
+    const handleLogOut = async () => {
+        try {
+            await logout();
+            navigate("/");
+        } catch (e) {
+            console.error(e.message);
+        }
+    }
+
     useEffect(() => {
         updateTotalCartItemAmount();
     }, [cartItems, updateTotalCartItemAmount]);
@@ -35,6 +47,8 @@ export const Wishlist = () => {
     return (
         <div>
             <h1 className="heading text-2xl ml-12 text-left">Wishlist</h1>
+            <h1 className="heading text-2xl ml-12 text-left">Hello, {user ? user.email : "unknown user"}</h1>
+            <button onClick={handleLogOut}>Log out</button>
             <div className="px-8 wishlist">
                 <div className=" wishlistItems">
                     {products.map((product) => {

@@ -100,10 +100,10 @@ export const ProductPage = () => {
                 </option>
               ))}
             </select>
-            <button className="sizeSelect addToWishlist" onClick={handleAddToWishlist}> Add to Wishlist <ShoppingBag className="bag-icon"/></button>
+            <button onClick={handleAddToWishlist} className="sizeSelect addToWishlist"> Add to Wishlist <ShoppingBag className="bag-icon"/></button>
           </div>
           <div className="lower">
-            <button className="addToCartBtn" onClick={handleAddToCart}>Add to Cart <ShoppingCart className="cart-icon" size={22}/> </button>
+            <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart <ShoppingCart className="cart-icon" size={22}/> </button>
           </div>
         </div>
         {showModal && <MyModal closeModal={closeModal} openModal={openModal} />}
@@ -112,4 +112,4 @@ export const ProductPage = () => {
   );
 };
 
-// TODO fix choosing different sizes of the same product
+// TODO: fix choosing different sizes of the same product

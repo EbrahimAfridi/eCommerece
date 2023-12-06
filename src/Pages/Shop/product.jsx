@@ -20,7 +20,7 @@ export const Product = (props) => {
 
     return (
         <div className='mt-10'>
-                <div className="flex items-start mb-1 sm:mb-3 image-div" onClick={handleProductClick}>  {/*bg-slate-100*/}
+                <div onClick={handleProductClick} className="flex items-start mb-1 sm:mb-3 image-div">  {/*bg-slate-100*/}
                     <div className="image-container w-[300px] flex items-center justify-center">
                         <img src={image} alt={name} className="bg-transparent mix-blend-multiply" />
                     </div>

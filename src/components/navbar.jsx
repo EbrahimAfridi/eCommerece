@@ -101,13 +101,13 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <Dropdown className=""/>
-            <Link style={{ textDecoration: 'none' }} to="/" className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl"><p>SneakEarth</p></Link>
+            <Link style={{ textDecoration: 'none' }} to="/shop" className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl"><p>SneakEarth</p></Link>
             <div className="mr-3 links sm:mr-6">
                 <MagnifyingGlass size={25} color="#f1efef" />
                 <Link to='/wishlist'>
                     <ShoppingBag size={25}/>
                 </Link>
-                <Link to="/"><Storefront size={25} /></Link>
+                <Link to="/shop"><Storefront size={25} /></Link>
                 <Link to="/cart">
                     <ShoppingCart size={25} />
                 </Link>
