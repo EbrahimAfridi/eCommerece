@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'LightItalic';
+    src: url('SaolDisplay-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'MediumBold';
+    src: url("GT-Walsheim-Condensed-Medium.ttf");
+}
+
+.medium-welcome{
+    font-family: "MediumBold", sans-serif;
+    font-weight: bolder;
+    letter-spacing: 4px;
+}
+.italic-login{
+    font-family: "LightItalic", sans-serif;
+    font-weight: bolder;
+}
+
+.heading{
+    font-family: "MediumBold", sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+.label{
+    font-family: MediumBold, "sans-serif";
+}

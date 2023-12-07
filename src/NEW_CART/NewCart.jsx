@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ShopContext } from "../Context/shop-context.jsx";
 import { useNavigate } from "react-router-dom";
 import NewCartItems from "./NewCartItems.jsx";
+import Navbar from "../components/navbar.jsx";
 
 const NewCart = () => {
     const { cartItems, getTotalCartAmount, products } = useContext(ShopContext);
@@ -10,6 +11,7 @@ const NewCart = () => {
 
     return (
         <>
+            <Navbar/>
             {totalAmount > 0 ? (
                 <div className="py-10 mx-0 sm:mx-48 main-container">
                     <p className="pl-2 font-bold sm:pl-0">SHOPPING CART</p>
@@ -34,7 +36,7 @@ const NewCart = () => {
                     <div className="flex flex-col items-center gap-6 py-10 mt-10 sm:flex-row checkout">
                         <button
                             className="p-2 text-xs text-white bg-black w-36 sm:text-lg basis-1/3"
-                            onClick={() => navigate("/")}
+                            onClick={() => navigate("/shop")}
                         >
                             Continue Shopping
                         </button>

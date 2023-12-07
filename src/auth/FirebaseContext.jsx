@@ -34,7 +34,6 @@ const FirebaseDatabase = getDatabase(FirebaseApp);
 export const FirebaseContextProvider = ({children}) => {
 
   const [user, setUser] = useState({});
-  // const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(FirebaseAuth, (currentUser) => {
@@ -50,13 +49,11 @@ export const FirebaseContextProvider = ({children}) => {
   // Create user
   const createUser = async (email, password) => {
     await createUserWithEmailAndPassword(FirebaseAuth, email, password);
-    // navigate("/shop");
   }
 
   // To sign in with email
   const signIn = async (email, password) => {
     await signInWithEmailAndPassword(FirebaseAuth, email, password);
-    // navigate("/shop");
   }
 
   // To POST user information
@@ -67,13 +64,11 @@ export const FirebaseContextProvider = ({children}) => {
   // To sign in with Google
   const signInWithGoogle = async () => {
     await signInWithPopup(FirebaseAuth, GoogleProvider);
-    // navigate("/shop");
   };
 
   // To log-out user
   const logout = async () => {
     await signOut(FirebaseAuth);
-    // navigate("/");
   }
 
 
@@ -87,7 +82,7 @@ export const FirebaseContextProvider = ({children}) => {
           signInWithGoogle,
           FirebaseAuth,
           user,
-          logout
+          logout,
         }
       }
     >
@@ -100,6 +95,3 @@ export const FirebaseContextProvider = ({children}) => {
 export const useFirebase = () => {
   return useContext(FirebaseContext);
 }
-
-// TODO: Navigate all firebase context functions to there respective locations
-//  TODO: and also add the functions in Login.jsx component

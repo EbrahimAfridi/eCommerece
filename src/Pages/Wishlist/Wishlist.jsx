@@ -3,9 +3,10 @@ import { ShopContext } from "../../Context/shop-context.jsx";
 import { useNavigate } from "react-router-dom";
 import './Wishlist.css';
 import {useFirebase} from "../../auth/FirebaseContext.jsx";
+import Navbar from "../../components/navbar.jsx";
 
 export const Wishlist = () => {
-    const {user, logout} = useFirebase();
+    const {user} = useFirebase();
     const navigate = useNavigate();
 
     const {
@@ -31,24 +32,14 @@ export const Wishlist = () => {
         addToCart(productId);
     };
 
-    const handleLogOut = async () => {
-        try {
-            await logout();
-            navigate("/");
-        } catch (e) {
-            console.error(e.message);
-        }
-    }
-
     useEffect(() => {
         updateTotalCartItemAmount();
     }, [cartItems, updateTotalCartItemAmount]);
 
     return (
         <div>
-            <h1 className="heading text-2xl ml-12 text-left">Wishlist</h1>
-            <h1 className="heading text-2xl ml-12 text-left">Hello, {user ? user.email : "unknown user"}</h1>
-            <button onClick={handleLogOut}>Log out</button>
+            <Navbar/>
+            <h1 className="heading text-2xl">Wishlist</h1>
             <div className="px-8 wishlist">
                 <div className=" wishlistItems">
                     {products.map((product) => {
@@ -90,8 +81,8 @@ export const Wishlist = () => {
                     })}
                 </div>
             </div>
-            <div className="flex justify-center mt-20">
-                <button className="p-2 text-lg text-white bg-black rounded-sm" onClick={() => navigate("/")}>
+            <div className="w-64 m-auto">
+                <button className="p-2 text-lg text-white bg-black rounded-md" onClick={() => navigate("/shop")}>
                     Continue Shopping
                 </button>
             </div>

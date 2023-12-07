@@ -74,7 +74,7 @@
 // }
 
 import { Link } from "react-router-dom";
-import { MagnifyingGlass, ShoppingBag, ShoppingCart, Storefront } from "phosphor-react";
+import {MagnifyingGlass, ShoppingBag, ShoppingCart, Storefront, User} from "phosphor-react";
 import { useContext} from "react";
 // import axios from 'axios';
 import './navbar.css';
@@ -100,10 +100,12 @@ export default function Navbar() {
 
     return (
         <div className="navbar">
-            <Dropdown className=""/>
+            {/*<Dropdown className=""/>*/}
             <Link style={{ textDecoration: 'none' }} to="/shop" className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl"><p>SneakEarth</p></Link>
             <div className="mr-3 links sm:mr-6">
-                <MagnifyingGlass size={25} color="#f1efef" />
+              <Link to='/account'>
+                <User size={25} color="#f1efef"  />
+              </Link>
                 <Link to='/wishlist'>
                     <ShoppingBag size={25}/>
                 </Link>

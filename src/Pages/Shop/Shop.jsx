@@ -4,11 +4,13 @@ import { Product } from './product.jsx';
 import './Shop.css';
 import Footer from '../../components/Footer.jsx';
 import { ShopContext } from '../../Context/shop-context.jsx';
+import Navbar from "../../components/navbar.jsx";
 
 export default function Shop() {
   const {products, isLoading} = useContext(ShopContext);
   return (
     <div className="shop">
+      <Navbar/>
       {/*<div className="pl-5 mt-3 mb-10 text-2xl font-bold shopTitle selection:bg-black selection:text-white">*/}
       {/*  <h1>Sneakers</h1>*/}
       {/*</div>*/}

@@ -1,22 +1,22 @@
-/*.shop{*/
-/*    background-color: whitesmoke;*/
+.shop{
+    background-color: whitesmoke;
+}
+/*.blend-mode {*/
+/*    mix-blend-mode: multiply;*/
 /*}*/
-/* .blend-mode {
-    mix-blend-mode: multiply;
-} */
-/* .image-div {
-    display: flex;
-    align-items: flex-start;
-} */
+/*.image-div {*/
+/*    display: flex;*/
+/*    align-items: flex-start;*/
+/*}*/
 
-/* .image-container { */
-    /* width: 300px; Adjust the width as per your requirements */
-    /* height: 200px;  */
-    /* display: flex; */
-    /* align-items: center;
-    justify-content: center; */
-    /* margin-left: 40px; */
-/* } */
+/*.image-container {*/
+/*     width: 300px; !*Adjust the width as per your requirements*!*/
+/*     height: 200px;*/
+/*     display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*     margin-left: 40px;*/
+/* }*/
 
 
 /*.image-div{*/

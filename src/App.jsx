@@ -8,7 +8,9 @@ import { Wishlist } from "./Pages/Wishlist/Wishlist.jsx";
 import NewCart from "./NEW_CART/NewCart.jsx";
 import {FirebaseContextProvider} from "./auth/FirebaseContext.jsx";
 import ProtectedRoute from "./Pages/ProtectedRoute.jsx";
-import {Login} from "./Pages/LogIn/Login.jsx";
+import NewLogin from "./Pages/LogIn/NewLogin.jsx";
+import Account from "./Pages/Account/Account.jsx";
+
 
 function App() {
 
@@ -16,10 +18,11 @@ function App() {
       <div className="App">
         <FirebaseContextProvider>
           <ShopContextProvider>
+            {/*<Navbar/>*/}
             <BrowserRouter>
-              <Navbar/>
               <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<NewLogin />} />
+                <Route path="/account" element={<Account />} />
                 <Route
                   path="/shop"
                   element={<ProtectedRoute><Shop /></ProtectedRoute>}

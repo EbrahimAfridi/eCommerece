@@ -35,10 +35,10 @@ export const Login = () => {
     try {
       if (buttonName === "signUp") {
         await createUser(email, password);
-        navigate('/wishlist');
+        navigate('/shop');
       } else if (buttonName === "signIn") {
         await signIn(email, password);
-        navigate('/wishlist');
+        navigate('/shop');
       }
       // Note: No need to handle signInWithGoogle here, as it has its own onClick handler
     } catch (e){
@@ -49,17 +49,20 @@ export const Login = () => {
 
   const handleGoogleSignIn = async () => {
     await signInWithGoogle();
-    navigate('/wishlist');
+    navigate('/shop');
   };
 
   return(
-    <form onSubmit={handleSubmit} className="authentication-container">
+    <form onSubmit={handleSubmit}
+          className="authentication-container absolute top-[30%] left-[40%] p-10"
+    >
 
-      <h2>Authentication</h2>
+      <h2 className="text-4xl mb-10">Authentication</h2>
       <div className="input-container">
 
         <input
-          placeholder="Enter your Email"
+          className="rounded-lg pl-3 h-8"
+          placeholder="Email"
           value={email}
           onChange={(e)=> setEmail(e.target.value)}
           type="email"
@@ -69,7 +72,8 @@ export const Login = () => {
       <div className="input-container">
 
         <input
-          placeholder="Enter your Passward"
+          className="rounded-lg pl-3 h-8"
+          placeholder="Passward"
           value={password}
           onChange={(e)=> setPassword(e.target.value)}
           type="password"
@@ -78,18 +82,27 @@ export const Login = () => {
       </div>
       <div className="button-container">
         <button
-          type="submit"
+          className="sign-up bg-slate-800"
+          type='submit'
           name="signUp"
-          className="sign-up">Sign Up</button>
+        >
+          Sign Up
+        </button>
         <button
+          style={{ backgroundColor: '#28a745', color: '#fff' }}
+          className="sign-in"
           type="submit"
           name="signIn"
-          className="sign-in">Sign In</button>
+        >
+          Sign In
+        </button>
         <button
+          style={{ backgroundColor: '#1e212a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onClick={handleGoogleSignIn}
           type="button"
           name="signInWithGoogle"
-          className="google-sign-in">
+          className="google-sign-in"
+        >
           {/*<FaGoogle className="google-icon" />*/}
           Sign In with Google
         </button>

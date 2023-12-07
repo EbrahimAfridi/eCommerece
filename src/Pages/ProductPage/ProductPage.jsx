@@ -4,6 +4,7 @@ import "./ProductPage.css";
 import MyModal from "../../components/Modal/SizeGuideModal";
 import {ShopContext} from "../../Context/shop-context.jsx";
 import {ShoppingBag, ShoppingCart} from "phosphor-react";
+import Navbar from "../../components/navbar.jsx";
 
 export const ProductPage = () => {
 
@@ -68,47 +69,51 @@ export const ProductPage = () => {
   const openModal = () => setShowModal(true);
 
   return (
-    <div className="mb-20 singleProduct">
-      <div className="singleProductImage">
-        <img src={image} alt={name} />
-      </div>
-      <div className="singleProductDetails">
-        <div className="coNameAndSize">
-          <p>{companyName}</p>
-          <button onClick={openModal}>Size Guide</button>
+    <>
+      <Navbar/>
+      <div className="mb-20 singleProduct">
+        <div className="singleProductImage">
+          <img src={image} alt={name} />
         </div>
-        <div className="singleProductNameAndPrice ">
-          <p>
-            <b>{name}</b>
-          </p>
-          <p className="price">${price}</p>
-          <p className="taxDesc">inclusive of all taxes</p>
-        </div>
-        <p className="singleProductDescription w-[100%] basis-1/3 ">{description}</p>
-        
-        <div className="basis-1/3 sizeNAddToCart">
-          <div className="upper">
-            <select
-              className="sizeSelect"
-              value={selectedOption}
-              onChange={handleSizeChange}
-            >
-              <option>Select Size</option>
-              {sizes.map((size) => (
-                <option key={size} value={size}>
-                  {size}
-                </option>
-              ))}
-            </select>
-            <button onClick={handleAddToWishlist} className="sizeSelect addToWishlist"> Add to Wishlist <ShoppingBag className="bag-icon"/></button>
+        <div className="singleProductDetails">
+          <div className="coNameAndSize">
+            <p>{companyName}</p>
+            <button onClick={openModal}>Size Guide</button>
           </div>
-          <div className="lower">
-            <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart <ShoppingCart className="cart-icon" size={22}/> </button>
+          <div className="singleProductNameAndPrice ">
+            <p>
+              <b>{name}</b>
+            </p>
+            <p className="price">${price}</p>
+            <p className="taxDesc">inclusive of all taxes</p>
           </div>
+          <p className="singleProductDescription w-[100%] basis-1/3">{description}</p>
+
+          <div className="basis-1/3 sizeNAddToCart">
+            <div className="upper">
+              <select
+                className="sizeSelect"
+                value={selectedOption}
+                onChange={handleSizeChange}
+              >
+                <option>Select Size</option>
+                {sizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+              <button onClick={handleAddToWishlist} className="sizeSelect addToWishlist"> Add to Wishlist <ShoppingBag className="bag-icon"/></button>
+            </div>
+            <div className="lower">
+              <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart <ShoppingCart className="cart-icon" size={22}/> </button>
+            </div>
+          </div>
+          {showModal && <MyModal closeModal={closeModal} openModal={openModal} />}
         </div>
-        {showModal && <MyModal closeModal={closeModal} openModal={openModal} />}
       </div>
-    </div>
+    </>
+
   );
 };
 
