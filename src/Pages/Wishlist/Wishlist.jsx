@@ -39,7 +39,7 @@ export const Wishlist = () => {
     return (
         <div>
             <Navbar/>
-            <h1 className="heading text-2xl">Wishlist</h1>
+            <h1 className="heading text-2xl text-center">Wishlist</h1>
             <div className="px-8 wishlist">
                 <div className=" wishlistItems">
                     {products.map((product) => {
@@ -82,7 +82,9 @@ export const Wishlist = () => {
                 </div>
             </div>
             <div className="w-64 m-auto">
-                <button className="p-2 text-lg text-white bg-black rounded-md" onClick={() => navigate("/shop")}>
+                <button className="p-2 md:ml-10 text-lg text-white bg-black rounded-md"
+                        onClick={() => navigate("/shop")}
+                >
                     Continue Shopping
                 </button>
             </div>

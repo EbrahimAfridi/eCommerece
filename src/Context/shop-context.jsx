@@ -1,4 +1,6 @@
 import {createContext, useEffect, useState} from "react";
+import isEqual from 'lodash/isEqual';
+
 export const ShopContext = createContext(null);  //ctx created
 
 export const ShopContextProvider = ({children}) => {                             //provider function created
@@ -8,6 +10,35 @@ export const ShopContextProvider = ({children}) => {                            
     const [wishlistItems, setWishlistItems] = useState({});
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    // Search functionality states and functions
+    const [showSearchInput, setShowSearchInput] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredProducts, setFilteredProducts] = useState([]);
+
+    // Sort Feature
+    const [sortOption, setSortOption] = useState(''); // 'lowToHigh', 'highToLow', or ''
+
+    const sortProducts = (option) => {
+        setSortOption(option);
+    };
+
+
+    const handleSearchIconClick = () => {
+        setShowSearchInput(!showSearchInput);
+        setSearchTerm('');
+    };
+
+    useEffect(() => {
+        // Filter products based on the search term
+        const results = searchTerm
+          ? products.filter((product) =>
+            product.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          : products;
+        setFilteredProducts(results);
+    }, [searchTerm, products]);
 
     const setSelectedSize = (productId, size) => {
         setSelectedSizes((prevSizes) => ({
@@ -37,11 +68,10 @@ export const ShopContextProvider = ({children}) => {                            
         });
     };
 
-
     const addToWishlist = (itemId) => {
         setWishlistItems((prev) => ({
             ...prev,                                        /*storing all old products */
-            // [itemId]: prev[itemId] ? prev[itemId] + 1 : 1,   /*checking if product exist already if yes than inc. qty + 1 else set qty = 1*/
+            // [itemId]: prev[itemId] ? prev[itemId] + 1 : 1, /*checking if product exist already if yes than inc. qty + 1 else set qty = 1*/
             [itemId]: 1,
         }));
     };
@@ -90,13 +120,14 @@ export const ShopContextProvider = ({children}) => {                            
             .then((data) => {
                 setProducts(data.sneakers);
                 setIsLoading(false);
-                // console.log(data.sneakers);
+                console.log(data.sneakers);
             })
             .catch((error) => {
-                console.log("Error fetching products:", error);
+                console.error("Error fetching products:", error);
                 setIsLoading(false);
             });
     }, []);
+
 
     const contextValue = {
         getTotalCartAmount,
@@ -112,7 +143,15 @@ export const ShopContextProvider = ({children}) => {                            
         addToWishlist,
         wishlistItems,
         products,
-        isLoading
+        isLoading,
+        showSearchInput,
+        setShowSearchInput,
+        handleSearchIconClick,
+        searchTerm,
+        setSearchTerm,
+        filteredProducts,
+        sortOption,
+        sortProducts,
     }
     return(
         <ShopContext.Provider value={contextValue}>

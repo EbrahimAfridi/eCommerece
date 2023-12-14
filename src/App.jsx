@@ -1,9 +1,8 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Navbar from "./components/navbar";
 import Shop from "./Pages/Shop/Shop.jsx";
 import './App.css';
 import { ProductPage } from "./Pages/ProductPage/ProductPage.jsx";
-import { ShopContextProvider } from "./Context/shop-context.jsx";
+import {ShopContextProvider} from "./Context/shop-context.jsx";
 import { Wishlist } from "./Pages/Wishlist/Wishlist.jsx";
 import NewCart from "./NEW_CART/NewCart.jsx";
 import {FirebaseContextProvider} from "./auth/FirebaseContext.jsx";
@@ -18,7 +17,6 @@ function App() {
       <div className="App">
         <FirebaseContextProvider>
           <ShopContextProvider>
-            {/*<Navbar/>*/}
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<NewLogin />} />

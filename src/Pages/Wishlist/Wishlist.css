@@ -6,6 +6,7 @@
     flex-direction: column; /* Add this line to display items horizontally */
     gap: 10px;
 }
+
 .heading {
     text-align: center;
     font-size: 25px;
