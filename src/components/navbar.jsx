@@ -32,7 +32,7 @@ export default function Navbar() {
 
 
   return (
-    <div className="navbar">
+    <div className="navbar fixed z-10">
       <Link style={{textDecoration:'none'}} to="/shop" className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl">
         <p>SneakEarth</p>
       </Link>

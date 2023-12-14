@@ -13,7 +13,7 @@ const NewCart = () => {
         <>
             <Navbar/>
             {totalAmount > 0 ? (
-                <div className="py-10 mx-0 sm:mx-48 main-container">
+                <div className="py-28 mx-0 sm:mx-48 main-container">
                     <p className="pl-2 font-bold sm:pl-0">SHOPPING CART</p>
                     <div className="flex flex-row text-xs sm:text-xl cart-heading">
                         <p className="basis-1/4 p-[10px] pr-[9px] pl-2">PRODUCT</p>

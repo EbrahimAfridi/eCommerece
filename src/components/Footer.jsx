@@ -1,105 +1,8 @@
 import "./Footer.css";
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import React from 'react';
+import SubscribeForm from './SubscribeForm.jsx';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-
-  const sendSubscriptionEmail = (subscriberEmail) => {
-    // Use your own service ID and template ID
-    const serviceId = 'service_m3ed6al';
-    const templateIdOwner = 'template_bmlwwgy';
-    const templateIdSubscriber = 'template_tzcxyra';
-    const userId = "K6gY1CYfV6wvce-M4";
-
-    // Email to owner
-    emailjs
-      .send(serviceId, templateIdOwner, {
-        to_email_owner: 'ahamadarsh92@gmail.com',
-        subscriber_email: subscriberEmail,
-      }, userId)
-      .then(
-        (response) => {
-          console.log('Email to owner sent successfully', response);
-        },
-        (error) => {
-          console.error('Email to owner could not be sent', error);
-        }
-      );
-
-    // Email to subscriber
-    emailjs
-      .send(serviceId, templateIdSubscriber, {
-        to_email_subscriber: subscriberEmail,
-      }, userId)
-      .then(
-        (response) => {
-          console.log('Email to subscriber sent successfully', response);
-          alert('Thank you for subscribing! Check your email for confirmation.');
-        },
-        (error) => {
-          console.error('Email to subscriber could not be sent', error);
-          alert('Oops! Something went wrong. Please try again later.');
-        }
-      );
-  };
-
-  const handleSubscribe = () => {
-    if (email) {
-      sendSubscriptionEmail(email);
-    }
-    console.log("News-letter sent");
-  };
-
-
-
-// import {useState} from "react";
-// import emailjs from 'emailjs-com';
-//
-//
-// const Footer = () => {
-//
-//   const [email, setEmail] = useState('');
-//
-//   const sendSubscriptionEmail = (subscriberEmail) => {
-//     // Email to owner
-//     emailjs
-//       .send('service_m3ed6al', 'template_bmlwwgy', {
-//         to_email_owner: 'ahamadarsh92@gmail.com',
-//         subscriber_email: subscriberEmail,
-//       })
-//       .then(
-//         (response) => {
-//           console.log('Email to owner sent successfully', response);
-//         },
-//         (error) => {
-//           console.error('Email to owner could not be sent', error);
-//         }
-//       );
-//
-//     // Email to subscriber
-//     emailjs
-//       .send('service_m3ed6al', 'template_tzcxyra', {
-//         to_email_subscriber: subscriberEmail,
-//       })
-//       .then(
-//         (response) => {
-//           console.log('Email to subscriber sent successfully', response);
-//           alert('Thank you for subscribing! Check your email for confirmation.');
-//         },
-//         (error) => {
-//           console.error('Email to subscriber could not be sent', error);
-//           alert('Oops! Something went wrong. Please try again later.');
-//         }
-//       );
-//   };
-//
-//   const handleSubscribe = () => {
-//     if (email) {
-//       sendSubscriptionEmail(email);
-//     }
-//     console.log("News-letter sent");
-//   };
 
   return(
         <footer className="flex flex-col gap-2 px-4 py-10 mt-[120px] text-white bg-black sm:pl-10 sm:pr-[0px] sm:py-[110px] sm:flex-row selection:bg-white">
@@ -107,13 +10,7 @@ const Footer = () => {
                 <h3 className="mb-2 text-3xl font-bold">SneakEarth</h3>
                 <p className="text-lg">Explore the world of sneakers.</p>
                 {/*NewsLetter*/}
-                <div className="mt-5 ">
-                  <input type="text" className="bg-transparent text-white border-white border-2 rounded-lg p-2 px-5 mr-5 py-1" placeholder="xyz@gmail.com"/>
-                  <button value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          onClick={handleSubscribe} className="bg-white text-black px-5 py-1 hover:bg-black hover:text-white hover:border-white hover:border-2">Subscribe</button>
-                </div>
-
+                <SubscribeForm />
             </div>
             <div className="basis-[20%] selection:text-black">
                 <div className="mt-4 mb-3 sm:mb-5 sm:mt-0">

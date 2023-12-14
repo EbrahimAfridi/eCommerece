@@ -39,8 +39,8 @@ export const Wishlist = () => {
     return (
         <div>
             <Navbar/>
-            <h1 className="heading text-2xl text-center">Wishlist</h1>
             <div className="px-8 wishlist">
+            <h1 className="heading-h1 text-2xl text-center">Wishlist</h1>
                 <div className=" wishlistItems">
                     {products.map((product) => {
                         const quantity = wishlistItems[product.id] || 0;
