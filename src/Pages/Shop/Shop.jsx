@@ -45,7 +45,8 @@ export default function Shop() {
     <div className="shop">
       <Navbar />
       <div className="landingPage">
-        <img src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />
+        <img src="https://crepdogcrew.com/cdn/shop/collections/Tab_Banners_1.png?v=1684822190" alt="banner image of sneaker" />
+        {/*<img src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />*/}
         {/*<img src="https://i.imgur.com/UDdaryt.jpeg" alt="" />*/}
       </div>
 
