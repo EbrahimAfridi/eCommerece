@@ -41,16 +41,16 @@ const SubscribeForm = () => {
   };
 
   return (
-    <div className="flex  gap-2"  style={{ marginTop: '20px' }}>
+    <div className="flex gap-2"  style={{ marginTop: '20px' }}>
       <input
         type="email"
         placeholder="Your email"
-        className=" text-black px-3 py-2 border border-gray-300 rounded-md"
+        className="px-3 bg-black text-slate-50 placeholder:text-slate-300 outline-none border border-white rounded-sm"
         value={subscriberEmail}
         onChange={(e) => setSubscriberEmail(e.target.value)}
       />
       <button
-        className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+        className="px-4 py-2 bg-white text-black rounded-sm hover:bg-black hover:text-white"
         onClick={handleSubscribe}
       >
         Subscribe

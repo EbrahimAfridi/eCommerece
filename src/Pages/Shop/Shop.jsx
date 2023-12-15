@@ -46,6 +46,7 @@ export default function Shop() {
       <Navbar />
       <div className="landingPage">
         <img src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />
+        {/*<img src="https://i.imgur.com/UDdaryt.jpeg" alt="" />*/}
       </div>
 
       <div className="relative">
