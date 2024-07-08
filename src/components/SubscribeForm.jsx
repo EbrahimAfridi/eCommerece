@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const SubscribeForm = () => {
-  const [subscriberEmail, setSubscriberEmail] = useState('');
+  const [subscriberEmail, setSubscriberEmail] = useState("");
 
-  emailjs.init('K6gY1CYfV6wvce-M4');
+  emailjs.init("K6gY1CYfV6wvce-M4");
 
   const sendSubscriptionEmail = (subscriberEmail) => {
     // Send email to owner
-    emailjs.send("service_ivt0voh", "template_hkuzepg", {
-      to_email_owner: "ahamadarsh92@gmail.com",
-      subscriber_email: subscriberEmail
-    })
+    emailjs
+      .send("service_ivt0voh", "template_hkuzepg", {
+        to_email_owner: "ahamadarsh92@gmail.com",
+        subscriber_email: subscriberEmail,
+      })
       .then(function (response) {
         console.log("Email to owner sent successfully", response);
       })
@@ -20,13 +21,15 @@ const SubscribeForm = () => {
       });
 
     // Send email to subscriber
-    emailjs.send("service_ivt0voh", "template_p3vnpol", {
-
-      to: subscriberEmail,
-    })
+    emailjs
+      .send("service_ivt0voh", "template_p3vnpol", {
+        to: subscriberEmail,
+      })
       .then(function (response) {
         console.log("Email to subscriber sent successfully", response);
-        console.log("Thank you for subscribing! Check your email for confirmation.");
+        console.log(
+          "Thank you for subscribing! Check your email for confirmation."
+        );
       })
       .catch(function (error) {
         console.error("Email to subscriber could not be sent", error);
@@ -41,7 +44,7 @@ const SubscribeForm = () => {
   };
 
   return (
-    <div className="flex gap-2"  style={{ marginTop: '20px' }}>
+    <div className="flex gap-2" style={{ marginTop: "20px" }}>
       <input
         type="email"
         placeholder="Your email"
@@ -50,7 +53,7 @@ const SubscribeForm = () => {
         onChange={(e) => setSubscriberEmail(e.target.value)}
       />
       <button
-        className="px-4 py-2 bg-white text-black rounded-sm hover:bg-black hover:text-white"
+        className="sm:px-4 py-2 px-2 bg-white text-black rounded-sm hover:bg-black hover:text-white"
         onClick={handleSubscribe}
       >
         Subscribe
