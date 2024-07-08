@@ -5,6 +5,7 @@ import "./Shop.css";
 import Footer from "../../components/Footer.jsx";
 import { ShopContext } from "../../Context/shop-context.jsx";
 import Navbar from "../../components/navbar.jsx";
+import VideoGrid from "../../components/VideoGrid/VideoGrid.jsx";
 
 export default function Shop() {
   const { isLoading, filteredProducts, sortOption, sortProducts } =
@@ -77,41 +78,7 @@ export default function Shop() {
             ))
           )}
         </div>
-        <div className="videoSlider">
-          <video
-            autoPlay
-            loop
-            muted
-            src="https://i.imgur.com/yB1JD3N.mp4"
-            type="video/mp4"
-          />
-          <video
-            autoPlay
-            loop
-            muted
-            src="https://i.imgur.com/JY6pgod.mp4"
-            type="video/mp4"
-          />
-          <video
-            autoPlay
-            loop
-            muted
-            src="https://i.imgur.com/58Kq4WQ.mp4"
-            type="video/mp4"
-          />
-          <video
-            onPlay
-            loop
-            muted
-            src="https://i.imgur.com/KlUEZY0.mp4"
-            type="video/mp4"
-          />
-          {/*<video autoPlay loop muted src="https://cdn.shopify.com/videos/c/vp/d9434865498449bcbfdb179234ffbad6/d9434865498449bcbfdb179234ffbad6.HD-1080p-2.5Mbps-17248744.mp4" type='video/mp4'/>*/}
-          {/*<video autoPlay loop muted src="https://cdn.shopify.com/s/files/1/2428/5565/files/shopgracias-videos-gif1a84c6a5.mp4?v=1691732358" type='video/mp4' />*/}
-          {/*<video autoPlay loop muted src="https://cdn.shopify.com/videos/c/vp/53c3d179188e4d7a86c1946fd98c553c/53c3d179188e4d7a86c1946fd98c553c.HD-1080p-2.5Mbps-17248542.mp4" type='video/mp4' />*/}
-          {/*<video autoPlay loop muted src="https://cdn.shopify.com/videos/c/vp/bff6c5a3f8b2476a966e18aa3e520149/bff6c5a3f8b2476a966e18aa3e520149.HD-1080p-2.5Mbps-17248825.mp4" type='video/mp4' />*/}
-        </div>
-
+        <VideoGrid />
         <div className="chooseUs">
           <h1>Why choose us?</h1>
           <p>
