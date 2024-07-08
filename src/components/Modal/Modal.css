@@ -1,0 +1,63 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px); /* Apply blur effect to the backdrop */
+    z-index: 9999; /* Adjust the z-index as needed */
+    overflow: hidden; /* Disable vertical scrolling on the backdrop */
+}
+
+.modal-body {
+    font-size: 25px;
+    background-color: #fff;
+    padding: 20px;
+    width: 700px;
+    max-width: 1500px; /* Adjust the maximum width as needed */
+}
+
+.modal-body > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body p {
+    font-weight: bold;
+    color: #000;
+}
+
+.modal-body .sizes {
+    margin-top: 20px;
+}
+
+.modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.modal-body th,
+.modal-body td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.modal-body th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+@media only screen and (min-width: 650px) {
+    .modal-body {
+        font-size: 20px;
+        width: 400px;
+        max-width: 1500px; /* Adjust the maximum width as needed */
+    }
+}
