@@ -25,7 +25,6 @@ export const Product = (props) => {
         className="flex items-start mb-1 sm:mb-3 image-div"
       >
         {" "}
-        {/*bg-slate-100*/}
         <div className="image-container w-[340px] flex items-center justify-center">
           <img
             src={image}
@@ -34,7 +33,7 @@ export const Product = (props) => {
           />
         </div>
       </div>
-      <div className="flex justify-between text-xs bg-transparent sm:mt-4 sm:text-[15px] sm:gap-5 description selection:bg-black selection:text-white">
+      <div className="flex justify-between text-xs bg-transparent sm:mt-4 sm:text-[15px] sm:gap-5 selection:bg-black selection:text-white">
         <p>
           <b>{name.length > 20 ? `${name.slice(0, 20)}...` : name}</b>
         </p>
@@ -42,7 +41,7 @@ export const Product = (props) => {
       </div>
       <div className="flex items-center justify-end mt-2 mb-4 text-sm bg-white sm:text-md md:mt-4 cart-div selection:bg-white selection:text-black">
         <button
-          className="p-1 w-full text-white bg-black addToCartBttn"
+          className="hover:bg-opacity-90 text-md tracking-widest p-1.5 bg-stone-900 text-white w-full rounded-md border font-extralight"
           onClick={handleAddToCart}
         >
           Add to Cart {cartItemAmount > 0 && <> [{cartItemAmount}] </>}
