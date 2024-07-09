@@ -6,11 +6,10 @@ import Footer from "../../components/Footer.jsx";
 import { ShopContext } from "../../Context/shop-context.jsx";
 import Navbar from "../../components/navbar.jsx";
 import VideoGrid from "../../components/VideoGrid/VideoGrid.jsx";
+import Filter from "../../components/Filter/Filter.jsx";
 
 export default function Shop() {
-  const { isLoading, filteredProducts, sortOption, sortProducts } =
-    useContext(ShopContext);
-
+  const { isLoading, filteredProducts, sortOption } = useContext(ShopContext);
   // Sorting logic
   const sortedProducts = () => {
     if (sortOption === "lowToHigh") {
@@ -45,23 +44,12 @@ export default function Shop() {
           src="https://crepdogcrew.com/cdn/shop/collections/Tab_Banners_1.png?v=1684822190"
           alt="banner image of sneaker"
         />
-        {/*<img src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />*/}
-        {/*<img src="https://i.imgur.com/UDdaryt.jpeg" alt="" />*/}
+        {/*<img className="w-[calc(100vw - 8px)]" src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />*/}
+        {/*<img className="w-[calc(100vw - 8px)]" src="https://i.imgur.com/UDdaryt.jpeg" alt="" />*/}
       </div>
 
-      <div className="relative">
-        <div className="absolute top-[10px] right-[20px]">
-          <select
-            className="rounded-sm text-md outline-black border-slate-900 border-2 border-solid"
-            value={sortOption || "filter"}
-            onChange={(e) => sortProducts(e.target.value)}
-          >
-            <option value="Filter">Filters</option>
-            <option value="Filter">Clear</option>
-            <option value="lowToHigh">Low to High</option>
-            <option value="highToLow">High to Low</option>
-          </select>
-        </div>
+      <div className="flex flex-col">
+        <Filter />
         <div className="flex flex-wrap gap-4 px-5 products">
           {isLoading ? (
             <div>Loading...</div>

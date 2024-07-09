@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { easeInOut, motion } from "framer-motion";
 import {
   MagnifyingGlass,
   ShoppingBag,
@@ -40,9 +41,19 @@ export default function Navbar() {
       <Link
         style={{ textDecoration: "none" }}
         to="/shop"
-        className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl"
+        className="ml-4 mr-4 text-lg sm:mr-0 sm:text-3xl overflow-hidden font-sans"
       >
-        <p>SneakEarth</p>
+        {" "}
+        {"SneakEarth".split("").map((char, index) => (
+          <motion.p className="overflow-hidden inline-block"
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.1 * index, }}
+            > 
+              {char}
+          </motion.p>
+        ))}
       </Link>
 
       <div>

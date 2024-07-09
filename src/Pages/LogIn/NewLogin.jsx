@@ -87,25 +87,27 @@ const NewLogin = () => {
             />
           </div>
           <div className="button-container flex items-center gap-5 mt-4 w-full">
-            {/* <button
-              className="label text-white sign-up p-3 rounded-sm bg-stone-900"
-              type="submit"
-              name="signUp"
-            >
-              Sign Up
-            </button>
-            <span>OR</span> */}
             <button
-              className="sign-in p-3 bg-stone-900 text-white w-full rounded-lg border shadow-sm font-extralight"
+              className="hover:bg-opacity-90 sign-in p-3 bg-stone-900 text-white w-full rounded-lg border shadow-sm font-extralight"
               type="submit"
               name="signIn"
             >
               Sign In
             </button>
+            <span>OR</span>
+            <button
+              className="hover:bg-opacity-90 sign-in p-3 bg-stone-900 text-white w-full rounded-lg border shadow-sm font-extralight"
+              type="submit"
+              name="signUp"
+            >
+              Sign Up
+            </button>
           </div>
-
+          <p className="text-zinc-500 mt-4 mb-8">
+            Already a user click sing up to login.
+          </p>
           <button
-            className="sign-in p-3 bg-white text-black w-full rounded-lg border shadow-sm font-extralight mt-4"
+            className="hover:shadow-md sign-in p-3 bg-white text-black w-full rounded-lg border shadow-sm font-extralight mt-4"
             onClick={handleGoogleSignIn}
             type="button"
             name="signInWithGoogle"
