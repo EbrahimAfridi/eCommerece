@@ -10,16 +10,15 @@ import {
   signOut,
 } from "firebase/auth";
 import { getDatabase, set, ref } from 'firebase/database';
-import {useNavigate} from "react-router-dom";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDpdffq5wyIPP6QfIus3Howy8KJKXz_vWE",
-  authDomain: "fir-testing-4217e.firebaseapp.com",
-  projectId: "fir-testing-4217e",
-  storageBucket: "fir-testing-4217e.appspot.com",
-  messagingSenderId: "196842497349",
-  appId: "1:196842497349:web:bd218af231c8969ee14a2c",
-  databaseURL: "https://fir-testing-4217e-default-rtdb.firebaseio.com",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
 };
 
 

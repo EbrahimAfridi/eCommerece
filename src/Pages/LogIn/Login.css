@@ -1,9 +1,9 @@
-/* Authentication.css */
+/* Authentication.css
 /*body{*/
     /*background-color: #333;*/
 /*}*/
 
-.authentication-container {
+/* .authentication-container {
     width: 350px;
     margin: 0 auto;
     text-align: center;
@@ -12,22 +12,22 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
+} */
+/* 
 h2 {
     margin-bottom: 20px;
 }
 
 .input-container {
     margin-bottom: 10px;
-}
+} */
 
 /*label {*/
 /*    display: block;*/
 /*    margin-bottom: 5px;*/
 /*}*/
 
-input {
+/* input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -36,28 +36,28 @@ input {
 
 .button-container {
     margin-top: 20px;
-}
+} */
 
-button {
+/* button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
+} */
 
-.sign-up {
+/* .sign-up {
     background-color: #007bff;
     color: #fff;
-}
+} */
 
-.sign-in {
+/* .sign-in {
     background-color: #28a745;
     color: #fff;
-}
+} */
 
-.google-sign-in {
+/* .google-sign-in {
     background-color: #000fff;
     color: #fff;
     display: flex;
@@ -67,10 +67,9 @@ button {
 
 .google-icon {
     margin-right: 10px;
-    color: #db4a39; /* Google Red */
-}
+    color: #db4a39; 
+} */
 
-/* Hover effect for buttons */
-button:hover {
+/* button:hover {
     opacity: 0.8;
-}
+} */ 
