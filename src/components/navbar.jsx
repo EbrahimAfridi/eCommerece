@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   MagnifyingGlass,
   ShoppingBag,
@@ -37,7 +37,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="navbar fixed top-0 h-[12vh] z-10">
+    <nav className="navbar fixed top-0 h-[12vh] z-10 shadow-sm bg-black text-white">
       <Link
         style={{ textDecoration: "none" }}
         to="/shop"
@@ -45,13 +45,14 @@ export default function Navbar() {
       >
         {" "}
         {"SneakEarth".split("").map((char, index) => (
-          <motion.p className="overflow-hidden inline-block"
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.1 * index, }}
-            > 
-              {char}
+          <motion.p
+            className="overflow-hidden inline-block"
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.1 * index }}
+          >
+            {char}
           </motion.p>
         ))}
       </Link>
@@ -65,12 +66,12 @@ export default function Navbar() {
               placeholder="Search sneakers..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-2 outline-none rounded-2xl md:w-56 md:h-8 placeholder:text-stone-700"
+              className="pl-2 outline-none rounded-xl md:w-64 md:h-10 placeholder:text-zinc-700 text-black"
             />
             {searchTerm && (
               <X
                 size={18}
-                color="#000"
+                color={"black"}
                 className="absolute top-1/2 right-2 ml-4 transform -translate-y-1/2 cursor-pointer"
                 onClick={handleClearIconClick}
               />
@@ -89,13 +90,13 @@ export default function Navbar() {
           <User size={25} color="#f1efef" />
         </Link>
         <Link to="/wishlist">
-          <ShoppingBag size={25} />
+          <ShoppingBag size={25} color="#f1efef" />
         </Link>
         <Link to="/shop">
-          <Storefront size={25} />
+          <Storefront size={25} color="#f1efef" />
         </Link>
         <Link to="/cart">
-          <ShoppingCart size={25} />
+          <ShoppingCart size={25} color="#f1efef" />
         </Link>
         {totalCartItemAmount > 0 && (
           <div
@@ -106,6 +107,6 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 }

@@ -39,13 +39,16 @@ export default function Shop() {
     <div className="shop">
       <Navbar />
       <div className="landingPage w-[calc(100vw - 8px)]">
-        <img
+        {/* <img
           className="w-[calc(100vw - 8px)]"
           src="https://crepdogcrew.com/cdn/shop/collections/Tab_Banners_1.png?v=1684822190"
           alt="banner image of sneaker"
+        /> */}
+        <img
+          className="w-[calc(100vw - 8px)]"
+          src="https://i.imgur.com/UDdaryt.jpeg"
+          alt="banner image of sneaker"
         />
-        {/*<img className="w-[calc(100vw - 8px)]" src=" https://mir-s3-cdn-cf.behance.net/project_modules/max_632/a59e7925442231.5634559ab5a21.jpg" alt="banner image of sneaker" />*/}
-        {/*<img className="w-[calc(100vw - 8px)]" src="https://i.imgur.com/UDdaryt.jpeg" alt="" />*/}
       </div>
 
       <div className="flex flex-col">
@@ -68,13 +71,17 @@ export default function Shop() {
         </div>
         <VideoGrid />
         <div className="chooseUs">
-          <h1>Why choose us?</h1>
-          <p>
-            SNEAKEARTH is bringing to life, fashion that is both stylish and
-            responsible. With innovative planet-friendly materials and
-            always-in-style trendy designs, we deliver access to a
-            never-before-experienced comfort with our products while striking
-            the right balance with your lifestyle quotient.
+          <h1 className="font-sans font-medium mb-8">Why choose us!</h1>
+          <p className="font-sans font-light tracking-wide text-lg whitespace-break-spaces leading-10">
+            <span className="bg-blue-700 p-1.5 font-bold text-white">
+              SNEAKEARTH
+            </span>{" "}
+            is bringing to life, fashion that is both stylish and responsible.{" "}
+            <br />
+            With innovative planet-friendly materials and always-in-style trendy
+            designs, we deliver access to a never-before-experienced comfort
+            with our products while striking the right balance with your
+            lifestyle quotient.
           </p>
           <div className="icons flex justify-center gap-4 py-5">
             <div className="flex flex-col gap-3">
@@ -83,7 +90,7 @@ export default function Shop() {
                 src="https://neemans.com/cdn/shop/files/PerfectFit_eba3f4ea-15fb-4af6-9b06-d34bd5790cc4.svg?v=1688997442"
                 alt=""
               />
-              <h4>COMFORTABLE</h4>
+              <h4 className="p-1.5 bg-green-700 text-white">COMFORTABLE</h4>
             </div>
             <div className="flex flex-col gap-3">
               <img
@@ -91,7 +98,7 @@ export default function Shop() {
                 src="https://neemans.com/cdn/shop/files/EasyToStyle_ac7ac370-8a7a-4df3-9fef-ff5f6b1af077.svg?v=1688997442"
                 alt=""
               />
-              <h4>EASY TO STYLE</h4>
+              <h4 className="p-1.5 bg-green-700 text-white">EASY TO STYLE</h4>
             </div>
             <div className="flex flex-col gap-3">
               <img
@@ -99,7 +106,7 @@ export default function Shop() {
                 src="https://neemans.com/cdn/shop/files/Sustainable_5389836c-e054-4ef6-aa90-291f2a38af64.svg?v=1688997442"
                 alt=""
               />
-              <h4>SUSTAINABLE</h4>
+              <h4 className="p-1.5 bg-green-700 text-white">SUSTAINABLE</h4>
             </div>
             <div className="flex flex-col gap-3">
               <img
@@ -107,7 +114,7 @@ export default function Shop() {
                 src="https://neemans.com/cdn/shop/files/EverydayWear_9a51f1da-a8a5-4712-ba7f-0b2c3cb010d1.svg?v=1688997442"
                 alt=""
               />
-              <h4>EVERYDAY WEAR</h4>
+              <h4 className="p-1.5 bg-green-700 text-white">EVERYDAY WEAR</h4>
             </div>
           </div>
         </div>

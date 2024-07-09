@@ -48,12 +48,12 @@ const SubscribeForm = () => {
       <input
         type="email"
         placeholder="Your email"
-        className="px-3 bg-black text-slate-50 placeholder:text-slate-300 outline-none border border-white rounded-sm"
+        className="md:w-60 h-12 hover:border-blue-600 focus:border-blue-600 bg-black pl-2 rounded-lg border border-zinc-300 shadow-sm focus:outline-none text-zinc-400 text-md font-light"
         value={subscriberEmail}
         onChange={(e) => setSubscriberEmail(e.target.value)}
       />
       <button
-        className="sm:px-4 py-2 px-2 bg-white text-black rounded-sm hover:bg-black hover:text-white"
+        className="hover:bg-opacity-90 p-3 w-32 bg-white text-black hover:bg-black hover:text-white rounded-lg border shadow-sm font-extralight"
         onClick={handleSubscribe}
       >
         Subscribe

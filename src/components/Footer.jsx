@@ -7,7 +7,6 @@ const Footer = () => {
       <div className="basis-[40%] selection:text-black">
         <h3 className="mb-2 text-3xl font-bold">SneakEarth</h3>
         <p className="text-lg">Explore the world of sneakers.</p>
-        {/*NewsLetter*/}
         <SubscribeForm />
       </div>
       <div className="basis-[20%] selection:text-black cursor-pointer">
@@ -15,13 +14,13 @@ const Footer = () => {
           <p className="text-xl mt-4 sm:mt-0 sm:mb-2 mb-0">About</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">About us</p>
+          <p className="hover:text-blue-600">About us</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">Features</p>
+          <p className="hover:text-blue-600">Features</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">News & Blog</p>
+          <p className="hover:text-blue-600">News & Blog</p>
         </div>
       </div>
       <div className="basis-[20%] selection:text-black">
@@ -30,7 +29,7 @@ const Footer = () => {
         </div>
         <p>
           <a
-            className="hover:text-slate-400"
+            className="hover:text-blue-600"
             href="https://www.linkedin.com/in/ebrahim-afridi-83188b219/"
             target="_blank"
             rel="noreferrer"
@@ -40,7 +39,7 @@ const Footer = () => {
         </p>
         <p>
           <a
-            className="hover:text-slate-400"
+            className="hover:text-blue-600"
             href="https://twitter.com/EbrahimAfridi3"
             target="_blank"
             rel="noreferrer"
@@ -50,7 +49,7 @@ const Footer = () => {
         </p>
         <p>
           <a
-            className="hover:text-slate-400"
+            className="hover:text-blue-600"
             href="https://www.instagram.com/ebrahim_afridi12"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,13 +63,13 @@ const Footer = () => {
           <p className="text-xl mb-2">Support</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">FAQs</p>
+          <p className="hover:text-blue-600">FAQs</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">Support Center</p>
+          <p className="hover:text-blue-600">Support Center</p>
         </div>
         <div>
-          <p className="hover:text-slate-400">Contact us</p>
+          <p className="hover:text-blue-600">Contact us</p>
         </div>
       </div>
     </footer>
