@@ -3,6 +3,7 @@
     top: 10vh;
     display: flex;
     flex-direction: row;
+    gap: 30px;
     height: calc(100% - 10vh);
     width: 100%;
     margin: 0 10px 0 0;
@@ -148,22 +149,9 @@ button {
     }
 }
 
-.addToCartBtn {
-    width: 420px;
-    height: 30px;
-    background-color: rgb(19, 19, 19);
-    font-size: 18px;
-    color: white;
-    border: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
 .bag-icon {
-    font-size: 22px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 @media only screen and (max-width: 650px) {
@@ -215,7 +203,7 @@ button {
     /*.productDescription{*/
     /*    !*width: 18rem;*!*/
     /*    !*display: -webkit-box;*!*/
-    /*    !*overflow: hidden;*!*/
+       /* !*overflow: hidden;*! */
     /*    !*-webkit-line-clamp: 3;*!*/
     /*    !*-webkit-box-orient: vertical;*!*/
     /*}*/

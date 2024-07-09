@@ -99,9 +99,9 @@ export const ProductPage = () => {
           <div className="basis-1/3 sizeNAddToCart">
             <div className="upper">
               <select
-                className="sizeSelect"
                 value={selectedOption}
                 onChange={handleSizeChange}
+                className="rounded-md w-full text-md outline-none border-zinc-300 hover:border-zinc-600 shadow-sm border p-2 tracking-wider"
               >
                 <option>Select Size</option>
                 {sizes.map((size) => (
@@ -112,15 +112,18 @@ export const ProductPage = () => {
               </select>
               <button
                 onClick={handleAddToWishlist}
-                className="sizeSelect addToWishlist"
+                className="flex items-center justify-center bg-white rounded-md text-md outline-none border-zinc-300 hover:border-zinc-600 shadow-sm border p-2 tracking-wider w-full"
               >
                 {" "}
                 Add to Wishlist <ShoppingBag className="bag-icon" />
               </button>
             </div>
             <div className="lower">
-              <button onClick={handleAddToCart} className="addToCartBtn">
-                Add to Cart <ShoppingCart className="cart-icon" size={22} />{" "}
+              <button
+                onClick={handleAddToCart}
+                className="gap-5 flex items-center justify-center bg-black text-white rounded-md text-md shadow-sm border p-2 tracking-wider w-full"
+              >
+                Add to Cart <ShoppingCart size={20} />{" "}
               </button>
             </div>
           </div>
