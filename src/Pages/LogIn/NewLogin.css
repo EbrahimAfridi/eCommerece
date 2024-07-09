@@ -10,8 +10,8 @@
 
 .medium-welcome{
     font-family: "MediumBold", sans-serif;
-    font-weight: bolder;
-    letter-spacing: 4px;
+    /* font-weight: bolder;
+    letter-spacing: 4px; */
 }
 .italic-login{
     font-family: "LightItalic", sans-serif;
