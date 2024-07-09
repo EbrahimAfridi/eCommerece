@@ -103,8 +103,8 @@ const NewLogin = () => {
               Sign Up
             </button>
           </div>
-          <p className="text-zinc-500 mt-4 mb-8">
-            Already a user click sing up to login.
+          <p className="text-zinc-500 mt-6 mb-8">
+            New to SneakEarth? Sign up.
           </p>
           <button
             className="hover:shadow-md sign-in p-3 bg-white text-black w-full rounded-lg border shadow-sm font-extralight mt-4"
