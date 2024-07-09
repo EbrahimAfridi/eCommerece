@@ -13,7 +13,7 @@ const NewCart = () => {
     <>
       <Navbar />
       {totalAmount > 0 ? (
-        <div className="py-28 mx-0 sm:mx-48 main-container">
+        <div className="py-32 mx-0 sm:mx-48 main-container">
           <p className="pl-2 font-bold sm:pl-0">SHOPPING CART</p>
           <div className="flex flex-row text-xs sm:text-xl cart-heading">
             <p className="basis-1/4 p-[10px] pr-[9px] pl-2">PRODUCT</p>
@@ -39,19 +39,21 @@ const NewCart = () => {
               return null;
             })}
           </div>
-          <div className="flex flex-col items-center gap-6 py-10 mt-10 sm:flex-row checkout">
-            <button
-              className="p-2 text-xs text-white bg-black w-36 sm:text-lg basis-1/3"
-              onClick={() => navigate("/shop")}
-            >
-              Continue Shopping
-            </button>
-            <button className="p-2 text-xs text-white bg-black w-36 sm:text-lg basis-1/3">
-              Checkout
-            </button>
-            <p className="flex justify-end p-2 pr-10 text-xs font-bold sm:text-lg basis-1/3 bg-slate-200">
+          <div className="flex flex-col px-3 sm:pr-0 sm:items-center gap-6 my-2 sm:flex-row checkout">
+            <p className="p-2.5 px-4 text-right w-full rounded-sm text-xs font-bold sm:text-lg bg-slate-200">
               GRAND TOTAL: ${totalAmount}
             </p>
+            <div className="flex justify-center items-center w-full gap-4">
+              <button
+                className="rounded-md text-xs sm:text-lg outline-none bg-black text-white shadow-sm border p-2 tracking-wider"
+                onClick={() => navigate("/shop")}
+              >
+                Continue Shopping
+              </button>
+              <button className="rounded-md text-xs sm:text-lg outline-none bg-black text-white shadow-sm border p-2 tracking-wider">
+                Checkout
+              </button>
+            </div>
           </div>
         </div>
       ) : (
