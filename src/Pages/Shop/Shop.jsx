@@ -46,7 +46,7 @@ export default function Shop() {
         /> */}
         <img
           className="w-[calc(100vw - 8px)]"
-          src="https://i.imgur.com/UDdaryt.jpeg"
+          src="./sneaker-banner-image.jpg"
           alt="banner image of sneaker"
         />
       </div>
